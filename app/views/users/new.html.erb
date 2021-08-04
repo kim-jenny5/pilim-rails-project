@@ -1,5 +1,5 @@
 <h1>Create an account</h1>
-<%= form_for signup_path(@user) do |f| %>
+<%= form_for @user do |f| %>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
 
