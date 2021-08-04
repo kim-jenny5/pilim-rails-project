@@ -10,6 +10,8 @@
     <p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
 <% end %>
 
-<%= form_tag logout_path do %>
-    <%= submit_tag "Log Out"%>
+<% if logged_in? %>
+    <%= form_tag logout_path do %>
+        <%= submit_tag "Log Out"%>
+    <% end %>
 <% end %>
