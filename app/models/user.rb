@@ -1,2 +1,5 @@
-class User < ApplicationRecord
+class User < ApplicationRecord    
+    has_many :lists
+    has_many :reviews
+    has_many :movies, through: :reviews
 end
