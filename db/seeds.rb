@@ -29,7 +29,7 @@ marvel = [
 ]
 
 marvel.each do |title, genre, year|
-    marvel_movies = Movie.create!(title: title, genre: genre, year: year)
+    Movie.create!(title: title, genre: genre, year: year)
 end
 
 korean = [
@@ -52,8 +52,7 @@ romance = [
     ["The Notebook", "Romance", "2004"], #16
     ["La La Land", "Romance", "2016"], #17
     ["Titanic", "Romance", "1997"], #18
-    ["Pride and Prejudice", "Drama", "2005"], #19
-    ["Sound of Music", "Musical", "1965"] #20
+    ["Pride and Prejudice", "Drama", "2005"] #19
 ]
 
 romance.each do |title, genre, year|
@@ -61,16 +60,16 @@ romance.each do |title, genre, year|
 end
 
 family = [
-    ["Toy Story", "Family", "1995"], #21
-    ["Toy Story 2", "Family", "1999"], #22
-    ["Toy Story 3", "Family", "2010"], #23
-    ["The Incredibles", "Family", "2004"], #24
-    ["The Incredibles 2", "Family", "2018"], #25
-    ["The Lion King", "Family", "1994"], #26
-    ["Ratatouille", "Family", "2007"], #27
-    ["Monsters, Inc.", "Family", "2001"], #28
-    ["Tangled", "Family", "2010"], #20
-    ["Zootopia", "Family", "2016"] #30
+    ["Toy Story", "Family", "1995"], #20
+    ["Toy Story 2", "Family", "1999"], #21
+    ["Toy Story 3", "Family", "2010"], #22
+    ["The Incredibles", "Family", "2004"], #23
+    ["The Incredibles 2", "Family", "2018"], #24
+    ["The Lion King", "Family", "1994"], #25
+    ["Ratatouille", "Family", "2007"], #26
+    ["Monsters, Inc.", "Family", "2001"], #27
+    ["Tangled", "Family", "2010"], #28
+    ["Zootopia", "Family", "2016"] #29
 ]
 
 family.each do |title, genre, year|
@@ -78,11 +77,11 @@ family.each do |title, genre, year|
 end
 
 anime = [
-    ["Your Name", "Romance", "2016"], #31
-    ["Princess Mononoke", "Fantasy", "1997"], #32
-    ["Howl's Moving Castle", "Fantasy", "2004"], #33
-    ["Spirited Away", "Fantasy", "2001"], #34
-    ["5 Centimeters per Second", "Romance", "2007"] #35
+    ["Your Name", "Romance", "2016"], #30
+    ["Princess Mononoke", "Fantasy", "1997"], #31
+    ["Howl's Moving Castle", "Fantasy", "2004"], #32
+    ["Spirited Away", "Fantasy", "2001"], #33
+    ["5 Centimeters per Second", "Romance", "2007"] #34
 ]
 
 anime.each do |title, genre, year|
@@ -95,7 +94,6 @@ lists = [
     [1, "Movies to watch for a broken heart 💔", "Cheer up girls (and boys). Grab that pint (or quart) of chocolate ice cream 🍫+🍦 and soothe your hearts with these movies! Love comes around (even if it comes in 2D forms). 💕"], #hearbreak
     [1, "Throwback to my childhood 🧒🏻", "Oh the good old days when the biggest worry of the week was which Disney movie to watch 😩"], #childhood
     [1, "When you want to travel to Japan 🇯🇵 but #poor", "Stay safe everyone and vicariously travel to Japan 🌸 through these select movies!"], #anime
-    [1, "Memories with Mom 💗", "Movies I used to (still watch!) with my mom. We're big musical fans! 🎤"], #mom
     [1, "AVENGERS ASSEMBLE!!!", "My favorite Marvel movies. 🥰 Does anyone else miss Marvel? Sh*t hit the fan after COVID 🥲"], #marvel
     [1, "Exciting movies for your Seoul (Gong Yoo doe 👀)", "Get your daily dose of vitamin K 🇰🇷 here!! All these movies are so good OMG!"], #korean
     [2, "Look Ma! It's Me!", "Not to brag but I'm a pretty big star now. 💁🏻‍♀️ All the movies I've featured in."], #florence
@@ -109,8 +107,16 @@ lists.each do |user_id, title, description|
     List.create!(user_id: user_id, title: title, description: description)
 end
 
-List.find(1) << Movie.find()
-List.find(5) << marvel_movies
+List.find(1).movies << Movie.find([15, 16, 17, 18])
+List.find(2).movies << Movie.find([20, 21, 22, 23, 25, 27])
+List.find(3).movies << Movie.find([30, 31, 32, 33, 34])
+List.find(4).movies << Movie.find([1, 2, 3, 4, 5, 6])
+List.find(5).movies << Movie.find([7, 8, 9, 10, 11, 12, 13])
+List.find(6).movies << Movie.find([1, 14])
+List.find(7).movies << Movie.find([15, 16, 29])
+List.find(8).movies << Movie.find([14, 16, 18, 19])
+List.find(9).movies << Movie.find([20, 21, 22, 23, 24, 25, 26, 27, 28, 29])
+List.find(10).movies << Movie.find([30, 31, 32, 33, 34])
 
 #--------------------------------------------------- Reviews
 
