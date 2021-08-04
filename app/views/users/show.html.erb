@@ -1,5 +1,5 @@
 <% if current_user %>
-    <h1><%= @user.first_name %> <%= @user.last_name %>!</h1>
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <h2>@<%= @user.username %></h2>
     <p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
     <p>Create a New List</p>
@@ -11,7 +11,5 @@
 <% end %>
 
 <% if logged_in? %>
-    <%= form_tag logout_path do %>
-        <%= submit_tag "Log Out"%>
-    <% end %>
+    <%= button_to "Log Out", logout_path %>
 <% end %>
