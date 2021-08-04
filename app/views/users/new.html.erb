@@ -1,3 +1,15 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h3>Oops! Looks like we've got a couple errors here:</h3>
+
+    <ul>
+      <% @user.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Create an account</h1>
 <%= form_for @user do |f| %>
     <%= f.label :first_name %>
