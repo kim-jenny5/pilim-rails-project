@@ -74,3 +74,14 @@ family = [
 family.each do |title, genre, year|
     Movie.create!(title: title, genre: genre, year: year)
 end
+
+anime = [
+    ["Princess Mononoke", "Fantasy", "1997"],
+    ["Howl's Moving Castle", "Fantasy", "2004"],
+    ["Spirited Away", "Fantasy", "2001"],
+    ["5 Centimeters per Second", "Romance", "2007"]
+]
+
+anime.each do |title, genre, year|
+    Movie.create!(title: title, genre: genre, year: year)
+end
