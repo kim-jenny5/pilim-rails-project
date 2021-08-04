@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
+        byebug
         
         if @user.save
             session[:user_id] = @user.id
@@ -12,6 +13,10 @@ class UsersController < ApplicationController
         else
             render :new
         end
+    end
+
+    def show
+        @user = User.find_by_id(params[:id])
     end
 
     private
