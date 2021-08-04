@@ -59,3 +59,18 @@ romance = [
 romance.each do |title, genre, year|
     Movie.create!(title: title, genre: genre, year: year)
 end
+
+family = [
+    ["Toy Story", "Family", "1995"],
+    ["Toy Story 2", "Family", "1999"],
+    ["Toy Story 3", "Family", "2010"],
+    ["The Incredibles", "Family", "2004"],
+    ["Ratatouille", "Family", "2007"],
+    ["Monsters, Inc.", "Family", "2001"],
+    ["Tangled", "Family", "2010"],
+    ["Zootopia", "Family", "2016"]
+]
+
+family.each do |title, genre, year|
+    Movie.create!(title: title, genre: genre, year: year)
+end
