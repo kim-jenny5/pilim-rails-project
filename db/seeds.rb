@@ -35,3 +35,15 @@ marvel = [
 marvel.each do |title, genre, year|
     Movie.create!(title: title, genre: genre, year: year)
 end
+
+korean = [
+    ["The Host", "Monster", "2006"],
+    ["The Thieves", "Heist", "2012"],
+    ["Oldboy", "Thriller", "2003"],
+    ["Extreme Job", "Action-Comedy", "2019"],
+    ["Train to Busan", "Action-Horror", "2016"]
+]
+
+korean.each do |title, genre, year|
+    Movie.create!(title: title, genre: genre, year: year)
+end
