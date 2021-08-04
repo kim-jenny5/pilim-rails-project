@@ -1,8 +1,4 @@
-class SessionsController < ApplicationController
-    def home
-        byebug
-    end
-    
+class SessionsController < ApplicationController    
     def new
        @user = User.new 
     end
