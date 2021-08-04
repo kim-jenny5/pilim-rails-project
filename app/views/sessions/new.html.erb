@@ -1,1 +1,9 @@
-<!-- THIS IS FOR LOGGING IN -->
+<h1>Login</h1>
+or <%= link_to "create an account", signup_path %>
+<br><br>
+
+<%= form_tag "/login" do %>
+    <p><%= text_field_tag :email, "Email" %></p>
+    <p><%= text_field_tag :password, "Password" %></p>
+    <p><%= submit_tag "Log In" %></p>
+<% end %>
