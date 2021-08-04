@@ -85,3 +85,21 @@ anime = [
 anime.each do |title, genre, year|
     Movie.create!(title: title, genre: genre, year: year)
 end
+
+lists = [
+    [1, "Movies to watch for a broken heart 💔", "Cheer up girls (and boys). Grab that pint (or quart) of chocolate ice cream 🍫+🍦 and soothe your hearts with these movies! Love comes around (even if it comes in 2D forms). 💕"], #hearbreak
+    [1, "Throwback to my childhood 🧒🏻", "Oh the good old days when the biggest worry of the week was which Disney movie to watch 😩"], #childhood
+    [1, "When you want to travel to Japan 🇯🇵 but #poor", "Stay safe everyone and vicariously travel to Japan 🌸 through these select movies!"], #anime
+    [1, "Memories with Mom 💗", "Movies I used to (still watch!) with my mom. We're big musical fans! 🎤"], #mom
+    [1, "AVENGERS ASSEMBLE!!!", "My favorite Marvel movies. 🥰 Does anyone else miss Marvel? Sh*t hit the fan after COVID 🥲"], #marvel
+    [1, "Exciting movies for your Seoul (Gong Yoo doe 👀)", "Get your daily dose of vitamin K 🇰🇷 here!! All these movies are so good OMG!"], #korean
+    [2, "Look Ma! It's Me!", "Not to brag but I'm a pretty big star now. 💁🏻‍♀️ All the movies I've featured in."], #florence
+    [2, "My guilty pleasure movies 🙊🙈", "And yes, Twilight is included here 😂"], #guilty_pleasures
+    [2, "Epic Period movies!!", "Watch these guys if you want to travel back in time #cottagecore 🍃💐"], #period
+    [3, "Yeehaw! 🤠 Family-friendly movies only for this cowboy.", "The Sheriff's in town boys. Yes, these movies are animated, but they'll keep you ON EDGE Y'ALL! 🙀"], #family
+    [3, "Giddy-up, partner! We're headed to the wild, wild East.", "I've never been to the East (since I'm a western cowboy 🤠) but 'reach for the sky'! These animated movies from Japan are as good as playing with Andy."] #japanese
+]
+
+lists.each do |user_id, title, description|
+    List.create!(user_id: user_id, title: title, description: description)
+end
