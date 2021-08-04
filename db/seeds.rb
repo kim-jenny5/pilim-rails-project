@@ -47,3 +47,15 @@ korean = [
 korean.each do |title, genre, year|
     Movie.create!(title: title, genre: genre, year: year)
 end
+
+romance = [
+    ["The Notebook", "Romance", "2004"],
+    ["La La Land", "Romance", "2016"],
+    ["Titanic", "Romance", "1997"],
+    ["Pride and Prejudice", "Drama", "2005"],
+    ["Sound of Music", "Musical", "1965"]
+]
+
+romance.each do |title, genre, year|
+    Movie.create!(title: title, genre: genre, year: year)
+end
