@@ -1,5 +1,5 @@
 <h1>Create an account</h1>
-<%= form_for @user do |f| %>
+<%= form_for signup_path(@user) do |f| %>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
 
@@ -13,7 +13,7 @@
     <%= f.text_field :email %>
 
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
 
-    <%= f.submit "Sign Up"%>
+    <%= f.submit "Sign Up" %>
 <% end %>
