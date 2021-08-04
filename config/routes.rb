@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get "/signup", to: "users#new"
-  post "/signup", to: "users#create"
+  # post "/signup", to: "users#create"
 
   resources :reviews
   resources :movies
