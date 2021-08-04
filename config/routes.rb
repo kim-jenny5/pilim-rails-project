@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/signup", to: "users#new"
+
   resources :reviews
   resources :movies
   resources :lists
