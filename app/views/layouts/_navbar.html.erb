@@ -1,1 +1,5 @@
-pilim
+<% if logged_in? %>
+    <%= link_to "pilim", user_path(current_user) %>
+<% else %>
+    <%= link_to "pilim", root_path %>
+<% end %>
