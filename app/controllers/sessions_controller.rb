@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
     def destroy
         reset_session
         redirect_to login_path
+        flash[:message] = "Bye bye! 👋🏻"
     end
 
     def google_omniauth
@@ -26,6 +27,7 @@ class SessionsController < ApplicationController
             u.email = google_auth[:info][:email]
             u.password = SecureRandom.hex(15)
         end
+        #USER ISN'T VALID HERE FOR SOME REASON!!
         if @user.valid?
             session[:user_id] = @user.id
             redirect_to user_path(@user)
