@@ -27,7 +27,6 @@ class SessionsController < ApplicationController
             u.email = google_auth[:info][:email]
             u.password = SecureRandom.hex(15)
         end
-        #USER ISN'T VALID HERE FOR SOME REASON!!
         if @user.valid?
             session[:user_id] = @user.id
             redirect_to user_path(@user)
