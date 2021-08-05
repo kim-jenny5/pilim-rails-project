@@ -36,9 +36,24 @@ class SessionsController < ApplicationController
         end
     end
 
+    #Don't know if Facebook and Google share the same request.env['omniauth.auth']
+    def facebook_omniauth
+        # @user = User.find_or_create_by(uid: fb_auth[:uid], provider: fb_auth[:provider]) do |u|
+        #     u.first_name = fb_auth[:info][:first_name]
+        #     u.last_name = fb_auth[:info][:last_name]
+        #     u.username = fb_auth[:info][:email].split("@").first
+        #     u.email = fb_auth[:info][:email]
+        #     u.password = SecureRandom.hex(15)
+        # end
+    end
+
     private
 
     def google_auth
         request.env['omniauth.auth']
     end
+
+    # def fb_auth
+    #     request.env['omniauth.auth']
+    # end
 end
