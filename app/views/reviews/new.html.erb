@@ -1,0 +1,4 @@
+<h1>Write a New Review</h1>
+<%= form_for [@user, @review] do |f| %>
+    <%= f.collection_select :movie_id, Movie.all, :title, :title %>
+<% end %>

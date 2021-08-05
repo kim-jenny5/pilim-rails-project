@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     end
 
     def new
+        @user = User.find_by_id(params[:user_id])
         @review = Review.new 
     end
 
