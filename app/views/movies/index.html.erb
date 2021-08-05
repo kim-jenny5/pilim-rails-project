@@ -16,7 +16,8 @@
 <br>
 
 <% if flash[:message] %>
-    <%= flash[:message] %>
+    <%= flash[:message] %><br>
+    Would you like <%= link_to "add it", new_movie_path %>?
 <% end %>
 
 <% if params[:genre_name] || params[:search] %>
