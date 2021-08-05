@@ -1,2 +1,6 @@
-<h2>Trending Movies</h2>
+<h2>Newest Releases</h2>
 
+<% @movies.each do |movie| %>
+    <%= movie.title %> (<%= movie.year %>)
+    <br>
+<% end %>
