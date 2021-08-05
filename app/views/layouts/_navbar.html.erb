@@ -1,7 +1,7 @@
 <% if logged_in? %>
-    <%= link_to "pilim", user_path(current_user) %>
-    <%= link_to "All Lists", lists_path %>
-    <%= link_to "All Movies", movies_path %>
+    <a href="<%= user_path(current_user) %>">pilim</a>
+    <a href="<%= lists_path %>">All Lists</a>
+    <a href="<%= movies_path %>">All Movies</a>
 <% else %>
     <%= link_to "pilim", root_path %>
 <% end %>

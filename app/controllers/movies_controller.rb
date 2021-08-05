@@ -5,7 +5,14 @@ class MoviesController < ApplicationController
         if params[:genre_name]
             @movies = Movie.where(genre: params[:genre_name])
         elsif params[:search]
-            @movies = Movie.where(title: params[:search])
+            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%")
+            if @movies.empty?
+                @newest_movies = Movie.newest_releases
+                flash[:message] = "Movie not found."
+                redirect_to movies_path
+            else
+                render :index
+            end
         else
             @newest_movies = Movie.newest_releases
         end

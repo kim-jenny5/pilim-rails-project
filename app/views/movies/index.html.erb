@@ -4,26 +4,30 @@
 <p>Filter by Genre</p>
 <%= form_with url: movies_path, method: :get do |form| %>
     <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre %>
-    <%= form.submit "Filter" %>
+    <%= form.submit "Filter", name: nil %>
 <% end %>
 <br>
 
 <%= form_tag movies_path, method: :get do %>
     <%= label_tag "Search by Title" %>
     <%= search_field_tag :search %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search", name: nil %>
 <% end %>
 <br>
 
-<% if !params[:genre_name] %>
-    <h2>Newest Releases</h2>
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
 
-    <% @newest_movies.each do |movie| %>
+<% if params[:genre_name] || params[:search] %>
+    <% @movies.each do |movie| %>
         <%= link_to "#{movie.title} (#{movie.year})", movie_path(movie) %>
         <br>
     <% end %>
 <% else %>
-    <% @movies.each do |movie| %>
+    <h2>Newest Releases</h2>
+
+    <% @newest_movies.each do |movie| %>
         <%= link_to "#{movie.title} (#{movie.year})", movie_path(movie) %>
         <br>
     <% end %>
