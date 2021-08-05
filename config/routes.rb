@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :movies
   resources :lists
   resources :sessions
+
+  get "/auth/google_oauth2/callback", to: "sessions#google_omniauth"
 end
