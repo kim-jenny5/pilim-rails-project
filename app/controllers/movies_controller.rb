@@ -18,6 +18,10 @@ class MoviesController < ApplicationController
         end
     end
 
+    def new
+        @movie = Movie.new        
+    end
+
     def show
         @movie = Movie.find_by_id(params[:id])
     end
