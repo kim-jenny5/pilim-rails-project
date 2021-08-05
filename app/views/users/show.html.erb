@@ -5,6 +5,9 @@
     <p>Create a New List</p>
     <p>My Reviews</p>
     <p>Write a New Review</p>
+    <% @user.lists.each do |list| %>
+        <%= link_to list.title, list_path(list) %><br>
+    <% end %>
 <% else %>
     <h2>@<%= @user.username %></h2>
     <p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
