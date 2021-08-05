@@ -9,5 +9,5 @@ class Movie < ApplicationRecord
     # scope :sort_by_most_reviews, -> { joins(:reviews).group(:title).order(reviews: :desc)}
     # scope :sort_by_most_reviews, -> { includes(:reviews).order(reviews: :desc)}
     scope :newest_releases, -> {order(year: :desc)}
-    # scope :alphabetical_genre, -> {order(genre: :desc)}
+    scope :alphabetical_genre, -> {order(:genre)}
 end

@@ -1,12 +1,9 @@
 class MoviesController < ApplicationController
     def index
-        # @movies = Movie.all
-        # @movies = Movie.sort_by_most_reviews
         @newest_movies = Movie.newest_releases
-        # @movies = Movie.joins(:reviews).group("reviews.movie_id").order("count(reviews.movie_id) DESC")
-        # @movies = Movie.joins(:reviews).group("movie.id").order("count(movie.id) DESC")
-        # @movies = Movie.alphabetical_genre
-        @movies = Movie.all
+        @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
+
+        
     end
 
     def show
