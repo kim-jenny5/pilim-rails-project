@@ -24,7 +24,6 @@ class SessionsController < ApplicationController
             u.last_name = google_auth[:info][:last_name]
             u.username = google_auth[:info][:email].split("@").first
             u.email = google_auth[:info][:email]
-            u.avatar = google_auth[:info][:image]
             u.password = SecureRandom.hex(15)
         end
         if @user.valid?

@@ -8,7 +8,7 @@
 
 #--------------------------------------------------- Users
 users = [
-    ["Jenny", "Kim", "jennyjellybeans", "kimj1905@gmail.com", "1234"],
+    ["Jenny", "Kim", "jennyjellybeans", "jennykim@gmail.com", "1234"],
     ["Florence", "Pugh", "florencepugh", "florencepugh@gmail.com", "florence"],
     ["Woody", "Pride", "woodynandy4ever", "woodynandy4ever@gmail.com", "andy"]
 ]
