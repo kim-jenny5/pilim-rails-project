@@ -2,8 +2,9 @@
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <h2>@<%= @user.username %></h2>
     <p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
+    <!-- <p><%= link_to "Create a New List", new_list_path %></p> -->
     <p>Create a New List</p>
-    <p><%= link_to "My Reviews",  %></p>
+    <p><%= link_to "My Reviews", user_reviews_path(@user) %></p>
     <p>Write a New Review</p>
     <h2>My Lists</h2>
     <% @user.lists.each do |list| %>

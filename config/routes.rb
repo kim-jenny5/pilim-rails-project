@@ -13,8 +13,10 @@ Rails.application.routes.draw do
   #logout
   post "/logout", to: "sessions#destroy"
 
-  resources :users
-  resources :reviews
+  resources :users do
+    resources :reviews, shallow: true
+  end
+  # resources :reviews
   resources :movies
   resources :lists
   resources :sessions
