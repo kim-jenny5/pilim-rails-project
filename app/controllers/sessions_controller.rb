@@ -20,11 +20,11 @@ class SessionsController < ApplicationController
     end
 
     def google_omniauth
-        @user = User.find_or_create_by(uid: google_auth[:uid], provider: google_auth[:provider]) do |u|
-            u.first_name = google_auth[:info][:first_name]
-            u.last_name = google_auth[:info][:last_name]
-            u.username = google_auth[:info][:email].split("@").first
-            u.email = google_auth[:info][:email]
+        @user = User.find_or_create_by(uid: auth[:uid], provider: auth[:provider]) do |u|
+            u.first_name = auth[:info][:first_name]
+            u.last_name = auth[:info][:last_name]
+            u.username = auth[:info][:email].split("@").first
+            u.email = auth[:info][:email]
             u.password = SecureRandom.hex(15)
         end
         if @user.valid?
@@ -35,24 +35,25 @@ class SessionsController < ApplicationController
         end
     end
 
-    #Don't know if Facebook and Google share the same request.env['omniauth.auth']
     def facebook_omniauth
-        # @user = User.find_or_create_by(uid: fb_auth[:uid], provider: fb_auth[:provider]) do |u|
-        #     u.first_name = fb_auth[:info][:first_name]
-        #     u.last_name = fb_auth[:info][:last_name]
-        #     u.username = fb_auth[:info][:email].split("@").first
-        #     u.email = fb_auth[:info][:email]
-        #     u.password = SecureRandom.hex(15)
-        # end
+        @user = User.find_or_create_by(uid: auth[:uid], provider: auth[:provider]) do |u|
+            u.first_name = auth[:info][:name].split(" ").first
+            u.last_name = auth[:info][:name].split(" ").last
+            u.username = auth[:info][:email].split("@").first
+            u.email = auth[:info][:email]
+            u.password = SecureRandom.hex(15)
+        end
+        if @user.valid?
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            redirect_to login_path
+        end
     end
 
     private
 
-    def google_auth
+    def auth
         request.env['omniauth.auth']
     end
-
-    # def fb_auth
-    #     request.env['omniauth.auth']
-    # end
 end
