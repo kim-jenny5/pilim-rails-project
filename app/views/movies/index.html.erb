@@ -1,11 +1,19 @@
 <!-- <% @movie_genres.each do |movie| %>
     <%= movie.genre %>
 <% end %> -->
-
+<p>Filter by Genre</p>
 <%= form_with url: movies_path, method: :get do |form| %>
     <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre %>
     <%= form.submit "Filter" %>
 <% end %>
+<br>
+
+<%= form_tag movies_path, method: :get do %>
+    <%= label_tag "Search by Title" %>
+    <%= search_field_tag :search %>
+    <%= submit_tag "Search" %>
+<% end %>
+<br>
 
 <% if !params[:genre_name] %>
     <h2>Newest Releases</h2>

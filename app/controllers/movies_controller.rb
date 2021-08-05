@@ -4,6 +4,8 @@ class MoviesController < ApplicationController
         @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
         if params[:genre_name]
             @movies = Movie.where(genre: params[:genre_name])
+        elsif params[:search]
+            @movies = Movie.where(title: params[:search])
         else
             @newest_movies = Movie.newest_releases
         end
