@@ -1,7 +1,7 @@
 <h1>Add a New Movie</h1>
 <%= form_for @movie do |f| %>
     <p><%= f.text_field :title, placeholder: "Title" %></p>
-    <p><%= f.text_field :genre, placeholder: "Genre" %></p>
+    <p><%= f.collection_select :genre, @movie_genres, :genre, :genre %></p>
     <p><%= f.text_field :year, placeholder: "Year" %></p>
     <%= f.submit "Add" %>
 <% end %>
