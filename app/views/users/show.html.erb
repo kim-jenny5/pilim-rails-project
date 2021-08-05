@@ -5,7 +5,7 @@
     <!-- <p><%= link_to "Create a New List", new_list_path %></p> -->
     <p>Create a New List</p>
     <p><%= link_to "My Reviews", user_reviews_path(@user) %></p>
-    <p>Write a New Review</p>
+    <p><%= link_to "Write a New Review", new_user_review_path(@user) %></p>
     <h2>My Lists</h2>
     <% @user.lists.each do |list| %>
         <%= link_to list.title, list_path(list) %><br>

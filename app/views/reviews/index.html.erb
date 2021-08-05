@@ -8,6 +8,6 @@
 <% @reviews.each do |review| %>
     <p><strong><%= review.movie.title %></strong></p>
     <%= review.title %><br>
-    <%= review.rating %><br>
+    <%= review.rating %>/5<br>
     <%= review.comment %>
 <% end %>
