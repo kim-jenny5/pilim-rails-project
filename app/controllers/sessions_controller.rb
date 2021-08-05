@@ -19,12 +19,19 @@ class SessionsController < ApplicationController
     end
 
     def google_omniauth
-        User.find_or_create_by(uid: google_auth[:uid], provider: google_auth[:provider]) do |u|
+        @user = User.find_or_create_by(uid: google_auth[:uid], provider: google_auth[:provider]) do |u|
             u.first_name = google_auth[:info][:first_name]
             u.last_name = google_auth[:info][:last_name]
             u.username = google_auth[:info][:email].split("@").first
             u.email = google_auth[:info][:email]
+            u.avatar = google_auth[:info][:image]
             u.password = SecureRandom.hex(15)
+        end
+        if @user.valid?
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
+        else
+            redirect_to login_path
         end
     end
 
