@@ -1,5 +1,7 @@
 <% if logged_in? %>
     <%= link_to "pilim", user_path(current_user) %>
+    <%= link_to "All Lists", lists_path %>
+    <%= link_to "All Movies", movies_path %>
 <% else %>
     <%= link_to "pilim", root_path %>
 <% end %>
