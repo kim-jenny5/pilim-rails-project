@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
                 @newest_movies = Movie.newest_releases
                 flash[:message] = "'#{params[:search]}' not found."
                 redirect_to movies_path
+                # render :index
             else
                 render :index
             end

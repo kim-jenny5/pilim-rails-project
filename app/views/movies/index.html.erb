@@ -22,11 +22,10 @@
 
 <% if params[:genre_name] || params[:search] %>
     <% @movies.each do |movie| %>
-        <%= link_to "#{movie.title} (#{movie.year})", movie_path(movie) %>
-        <br>
+        <%= link_to "#{movie.title} (#{movie.year})", movie_path(movie) %><br>
     <% end %>
     <br>
-    <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small>
+    <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
 <% else %>
     <h2>Newest Releases</h2>
 
