@@ -17,7 +17,7 @@ class ListsController < ApplicationController
     end
 
     def create
-        @list = List.new(list_params)
+        @list = current_user.lists.build(list_params)
 
         if @list.save
             redirect_to list_path(@list)
@@ -28,6 +28,12 @@ class ListsController < ApplicationController
 
     def show
         @list = List.find_by_id(params[:id])
+    end
+
+    def destroy
+        @list = List.find_by_id(params[:id])
+        @list.destroy
+        redirect_to user_path(@list.user)
     end
 
     private
