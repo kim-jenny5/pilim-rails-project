@@ -62,11 +62,17 @@ class ListsController < ApplicationController
     end
 
     def add_movie
-        byebug
+        @list = List.find_by_id(params[:list_id])
+        @movie = Movie.find_by_id(params[:movie_id])
+        @list.movies << @movie
+        redirect_to list_path(@list)
     end
 
     def delete_movie
-        byebug
+        @list = List.find_by_id(params[:list_id])
+        @movie = Movie.find_by_id(params[:movie_id])
+        @list.movies.delete(@movie)
+        redirect_to list_path(@list)
     end
 
     private

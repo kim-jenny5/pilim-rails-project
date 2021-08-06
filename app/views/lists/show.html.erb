@@ -15,6 +15,7 @@
     <% if params[:search] %>
         <% @movies.each do |movie| %>
             <%= movie.title %> (<%= movie.year %>)<br>
+            <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id)  %>
         <% end %>
         <br>
         <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
@@ -23,5 +24,6 @@
 <ul>
     <% @list.movies.each do |movie| %>
         <li><%= link_to movie.title, movie_path(movie) %></li>
+            <%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete %>        
     <% end %>
 </ul>

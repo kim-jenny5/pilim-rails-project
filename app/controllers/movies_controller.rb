@@ -43,14 +43,6 @@ class MoviesController < ApplicationController
         # @movie.reviews.order(updated_at: :desc)
     end
 
-    def add_movie
-        byebug
-    end
-
-    def delete_movie
-        byebug
-    end
-
     private
 
     def movie_params

@@ -29,8 +29,8 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :movies, only: [:post, :delete] do 
-      post "add_movie", to: "lists#add_movie"
-      delete "delete_movie", to: "lists#delete_movie"
+      post "add_movie", to: "lists#add_movie", as: "add"
+      delete "delete_movie", to: "lists#delete_movie", as: "delete"
     end
   end
 
