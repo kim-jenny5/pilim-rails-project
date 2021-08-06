@@ -17,7 +17,8 @@ class ListsController < ApplicationController
     end
 
     def create
-        @list = current_user.lists.build(list_params)
+        # @list = current_user.lists.build(list_params)
+        @list = List.new(list_params)
 
         if @list.save
             redirect_to list_path(@list)
@@ -30,6 +31,20 @@ class ListsController < ApplicationController
         @list = List.find_by_id(params[:id])
     end
 
+    def edit
+        @list = List.find_by_id(params[:id])
+    end
+
+    def update
+        @list = List.find_by_id(params[:id])
+        byebug
+        if @list.valid?
+            @list.update(list_params)
+            # redirect_to user_reviews_path(current_user.id)
+            redirect_to list_path(@list)
+        end
+    end
+
     def destroy
         @list = List.find_by_id(params[:id])
         @list.destroy
@@ -39,6 +54,6 @@ class ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).permit(:title, :description)
+        params.require(:list).permit(:title, :description).merge(user_id: current_user.id)
     end
 end

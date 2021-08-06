@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
         @review = @movie.reviews.build(review_params)
         # @review = self.new(review_params)
         if @review.save
-            redirect_to movie_path(@review.movie.id)
+            redirect_to movie_path(@review.movie)
         end
     end
 
@@ -35,14 +35,14 @@ class ReviewsController < ApplicationController
         if @review.valid?
             @review.update(review_params)
             # redirect_to user_reviews_path(current_user.id)
-            redirect_to movie_path(@review.movie.id)
+            redirect_to movie_path(@review.movie)
         end
     end
 
     def destroy
         @review = Review.find_by_id(params[:id])
         @review.destroy
-        redirect_to movie_path(@review.movie.id)
+        redirect_to movie_path(@review.movie)
     end
 
     private
