@@ -1,15 +1,17 @@
 <% if @user %>
     <h1>Reviews by</h1>
-    <%= @user.username %>
+    <%= link_to @user.username, user_path(@user) %>
     <br><br>
     <% @reviews.each do |review| %>
         <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
         <strong><%= review.title %></strong><br>
         ⭐️ <%= review.rating %>/5<br>
         <%= review.comment %><br>
-        <%= link_to "Edit", edit_review_path(review) %>
-        <%= form_tag review_path(review), method: :delete do %>
-            <%= submit_tag "Delete" %>
+        <% if @user.id == current_user.id %>
+            <%= link_to "Edit", edit_review_path(review) %>
+            <%= form_tag review_path(review), method: :delete do %>
+                <%= submit_tag "Delete" %>
+            <% end %>
         <% end %>
     <% end %>
 <% elsif @movie %>
