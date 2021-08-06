@@ -1,9 +1,13 @@
 <h1><%= @movie.title %></h1>
-<%= @movie.genre %><br>
-<%= @movie.year %>
-
-<% @movie_reviews.each do |review| %>
-    <%= review.title %>
-    <%= review.rating %>
-    <%= review.comment %>
+Genre: <%= @movie.genre %><br>
+Released: <%= @movie.year %>
+<br><br>
+<h2>Reviews</h2>
+<% @movie.reviews.most_recently_updated.each do |review| %>
+    
+    <strong><%= review.title %></strong><br>
+    ⭐️ <%= review.rating %>/5<br>
+    <%= review.comment %><br><br>
 <% end %>
+
+<br><br>

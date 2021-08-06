@@ -35,9 +35,8 @@ class MoviesController < ApplicationController
 
     def show
         @movie = Movie.find_by_id(params[:id])
-        # byebug
         # @movie.reviews.order(updated_at: :desc)
-        @movie_reviews = @movie.most_recently_updated
+        # @movie_reviews = @movie.most_recently_updated
     end
 
     private
