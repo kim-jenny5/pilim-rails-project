@@ -1,18 +1,18 @@
-<% if current_user %>
+<% if current_user == @user %>
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
     <h2>@<%= @user.username %></h2>
     <p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
     <!-- <p><%= link_to "Create a New List", new_list_path %></p> -->
     <p>Create a New List</p>
     <p><%= link_to "My Reviews", user_reviews_path(@user) %></p>
-    <h2>My Lists</h2>
+    <h3>My Lists</h3>
     <% @user.lists.each do |list| %>
         <%= link_to list.title, list_path(list) %><br>
     <% end %>
 <% else %>
     <h2>@<%= @user.username %></h2>
     <p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
-    <h2><%= @user.username %>'s Lists</h2>
+    <h3><%= @user.username %>'s Lists</h3>
     <% @user.lists.each do |list| %>
         <%= link_to list.title, list_path(list) %><br>
     <% end %>

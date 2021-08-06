@@ -2,8 +2,8 @@
 <%= @user.username %>
 <br><br>
 <% @reviews.each do |review| %>
-    <p><strong><%= review.movie.title %></strong></p>
-    <%= review.title %><br>
-    <%= review.rating %>/5<br>
+    <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
+    <strong><%= review.title %></strong><br>
+    ⭐️ <%= review.rating %>/5<br>
     <%= review.comment %>
 <% end %>
