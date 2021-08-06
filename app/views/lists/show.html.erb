@@ -8,4 +8,7 @@
 </ul>
 <% if @list.user == current_user %>
     <%= link_to "Edit", edit_list_path(@list) %>
+    <%= form_tag list_path(@list), method: :delete do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
 <% end %>
