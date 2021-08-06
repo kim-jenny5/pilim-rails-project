@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+    helper_method :star_rating
+
     def index
         # @newest_movies = Movie.newest_releases
         @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
@@ -35,6 +37,7 @@ class MoviesController < ApplicationController
 
     def show
         @movie = Movie.find_by_id(params[:id])
+        # @movie_rating = star_rating(@movie)
         # @movie.reviews.order(updated_at: :desc)
     end
 
@@ -52,5 +55,9 @@ class MoviesController < ApplicationController
 
     def movie_params
         params.require(:movie).permit(:title, :genre, :year)
+    end
+
+    def star_rating(movie)
+        ((movie.reviews.sum(:rating).to_f)/(movie.reviews.count)).round(2)
     end
 end
