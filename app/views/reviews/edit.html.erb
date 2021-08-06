@@ -1,4 +1,4 @@
-<h1>Write a New Review</h1>
+<h1>Edit Your Review</h1>
 <h2><%= @movie.title %></h2>
 <%= form_for [@movie, @review] do |f| %>
     <%= render partial: "form", locals: {f: f} %>
