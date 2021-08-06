@@ -20,10 +20,12 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find_by_id(params[:id])
-        byebug
+        
         if @user.valid?
             @user.update(user_params)
             redirect_to user_reviews_path(current_user.id)
+        else
+            render :new
         end
     end
 
