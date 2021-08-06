@@ -2,10 +2,10 @@ class ReviewsController < ApplicationController
     def index
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
-            @reviews = @user.reviews
+            @reviews = @user.reviews.most_recently_updated
         elsif params[:movie_id]
             @movie = Movie.find_by_id(params[:movie_id])
-            @reviews = @movie.reviews
+            @reviews = @movie.reviews.most_recently_updated
         end
     end
 

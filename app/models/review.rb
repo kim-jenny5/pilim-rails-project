@@ -5,4 +5,5 @@ class Review < ApplicationRecord
   validates :rating, numericality: { only_integer: true }
 
   scope :top_ten_recently_updated, -> { order(updated_at: :desc).limit(10) }
+  scope :most_recently_updated, -> { order(updated_at: :desc) }
 end

@@ -37,6 +37,7 @@ class MoviesController < ApplicationController
 
     def show
         @movie = Movie.find_by_id(params[:id])
+        @reviews = @movie.reviews.top_ten_recently_updated
         # @movie_rating = star_rating(@movie)
         # @movie.reviews.order(updated_at: :desc)
     end
