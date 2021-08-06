@@ -21,13 +21,17 @@ Rails.application.routes.draw do
   resources :movies do
     # resources :reviews, shallow: true #movies/1/reviews (located in movie show view)
     resources :reviews, only: [:new, :create, :index] #movies/1/reviews (located in movie show view)
+    # post "add_movie", as: "add"
+    # delete "delete_movie", as: "delete"
   end
 
   resources :reviews, only: [:edit, :update, :destroy]
 
   resources :lists do
-    post "add_movie"
-    delete "delete_movie"
+    resources :movies, only: [:post, :delete] do 
+      post "add_movie", to: "lists#add_movie"
+      delete "delete_movie", to: "lists#delete_movie"
+    end
   end
 
   resources :sessions

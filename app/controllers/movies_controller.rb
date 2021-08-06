@@ -43,14 +43,12 @@ class MoviesController < ApplicationController
         # @movie.reviews.order(updated_at: :desc)
     end
 
-    #not necessary
-    # def edit
-    #     @movie = Movie.find_by_id(params[:id])
-    #     @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
-    # end
+    def add_movie
+        byebug
+    end
 
-    def update
-
+    def delete_movie
+        byebug
     end
 
     private
