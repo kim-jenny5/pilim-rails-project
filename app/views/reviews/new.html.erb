@@ -4,6 +4,6 @@
     <%= f.label :rating %> (1-5)<br>
     <%= f.number_field :rating, {min: 0, max: 5} %><br><br>
     <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
+    <%= f.text_area :comment %>
     <p><%= f.submit %></p>
 <% end %>
