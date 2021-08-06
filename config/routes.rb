@@ -17,7 +17,10 @@ Rails.application.routes.draw do
     resources :reviews, shallow: true
   end
   # resources :reviews
-  resources :movies
+  resources :movies do
+    resources :reviews, shallow: true
+  end
+
   resources :lists
   resources :sessions
 

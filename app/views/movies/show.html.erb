@@ -1,6 +1,11 @@
 <h1><%= @movie.title %></h1>
 Genre: <%= @movie.genre %><br>
-Released: <%= @movie.year %>
+Released: <%= @movie.year %><br>
+
+<%= link_to "Edit", edit_movie_path(@movie) %>
+<%= link_to "Add a Review", new_movie_review_path(@movie) %>
+
+
 <br><br>
 <h2>Reviews</h2>
 <% @movie.reviews.most_recently_updated.each do |review| %>
