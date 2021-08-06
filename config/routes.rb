@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   post "/logout", to: "sessions#destroy"
 
   resources :users do
-    resources :reviews, shallow: true
+    resources :reviews, shallow: true #users/1/reviews (located in review index)
   end
   # resources :reviews
   resources :movies do
-    resources :reviews, shallow: true
+    resources :reviews, shallow: true #movies/1/reviews (located in movie show view)
   end
 
   resources :lists

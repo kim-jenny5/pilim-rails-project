@@ -5,5 +5,9 @@
     <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
     <strong><%= review.title %></strong><br>
     ⭐️ <%= review.rating %>/5<br>
-    <%= review.comment %>
+    <%= review.comment %><br>
+    <%= link_to "Edit", edit_review_path(review) %>
+    <%= form_tag review_path(review), method: :delete do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
 <% end %>
