@@ -1,6 +1,8 @@
 class ListsController < ApplicationController
     def index
         @lists = List.all
+        # @movies = Movie.where('title LIKE ?', "%#{params[:search]}%")
+
     end
 
     def show

@@ -9,8 +9,7 @@
 <br>
 
 <%= form_tag movies_path, method: :get do %>
-    <%= label_tag "Search by Title" %>
-    <%= search_field_tag :search %>
+    <%= search_field_tag :search, nil, placeholder: "Search by title" %>
     <%= submit_tag "Search", name: nil %>
 <% end %>
 <br>
