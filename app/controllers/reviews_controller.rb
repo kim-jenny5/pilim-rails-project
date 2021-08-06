@@ -1,7 +1,12 @@
 class ReviewsController < ApplicationController
     def index
-        @user = User.find_by_id(params[:user_id])
-        @reviews = @user.reviews
+        if params[:user_id]
+            @user = User.find_by_id(params[:user_id])
+            @reviews = @user.reviews
+        elsif params[:movie_id]
+            @movie = Movie.find_by_id(params[:movie_id])
+            @reviews = @movie.reviews
+        end
     end
 
     def new
