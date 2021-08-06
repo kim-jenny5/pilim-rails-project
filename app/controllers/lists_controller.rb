@@ -29,6 +29,16 @@ class ListsController < ApplicationController
 
     def show
         @list = List.find_by_id(params[:id])
+
+        if params[:search]
+            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%") #movie into model
+            if @movies.blank?
+                flash[:message] = "'#{params[:search]}' not found."
+                render :show
+            else
+                render :show
+            end
+        end
     end
 
     def edit
@@ -49,6 +59,14 @@ class ListsController < ApplicationController
         @list = List.find_by_id(params[:id])
         @list.destroy
         redirect_to user_path(@list.user)
+    end
+
+    def add_movie
+        byebug
+    end
+
+    def delete_movie
+        byebug
     end
 
     private

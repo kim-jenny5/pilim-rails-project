@@ -25,7 +25,11 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:edit, :update, :destroy]
 
-  resources :lists
+  resources :lists do
+    post "add_movie"
+    delete "delete_movie"
+  end
+
   resources :sessions
 
   get "/auth/google_oauth2/callback", to: "sessions#google_omniauth"
