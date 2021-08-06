@@ -24,23 +24,6 @@ class MoviesController < ApplicationController
     end
 
     def create
-        # byebug
-
-        if params[:movie][:new_genre].blank?
-            @test = "yeppers"
-            @movie = Movie.new(movie_params)
-
-            if @movie.save
-                redirect_to movie_path(@movie)
-            else
-                render :new
-            end
-        else
-            byebug
-            @movie = Movie.new(movie_params_new_genre)
-
-        end
-
         @movie = Movie.new(movie_params)
 
         if @movie.save
@@ -58,9 +41,6 @@ class MoviesController < ApplicationController
 
     def movie_params
         params.require(:movie).permit(:title, :genre, :year)
-    end
-
-    def movie_params_new_genre
-        params.require(:movie).permit(:title, :new_genre, :year)
+        # params.require(:movie).permit(:title, genre: [], :year)
     end
 end
