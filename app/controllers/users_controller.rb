@@ -14,6 +14,19 @@ class UsersController < ApplicationController
         end
     end
 
+    def edit
+        @user = User.find_by_id(params[:id])
+    end
+
+    def update
+        @user = User.find_by_id(params[:id])
+        byebug
+        if @user.valid?
+            @user.update(user_params)
+            redirect_to user_reviews_path(current_user.id)
+        end
+    end
+
     def show
         @user = User.find_by_id(params[:id])
         # redirect_to login_path if !@user
