@@ -36,13 +36,11 @@ class MoviesController < ApplicationController
     def show
         @movie = Movie.find_by_id(params[:id])
         # @movie.reviews.order(updated_at: :desc)
-        # @movie_reviews = @movie.most_recently_updated
     end
 
     private
 
     def movie_params
         params.require(:movie).permit(:title, :genre, :year)
-        # params.require(:movie).permit(:title, genre: [], :year)
     end
 end

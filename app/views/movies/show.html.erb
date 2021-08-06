@@ -4,7 +4,7 @@ Released: <%= @movie.year %>
 <br><br>
 <h2>Reviews</h2>
 <% @movie.reviews.most_recently_updated.each do |review| %>
-    
+    <%= review.user.username %><br>
     <strong><%= review.title %></strong><br>
     ⭐️ <%= review.rating %>/5<br>
     <%= review.comment %><br><br>
