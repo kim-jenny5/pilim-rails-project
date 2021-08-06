@@ -34,7 +34,8 @@ class ReviewsController < ApplicationController
         @review = Review.find_by_id(params[:id])
         if @review.valid?
             @review.update(review_params)
-            redirect_to user_reviews_path(current_user.id)
+            # redirect_to user_reviews_path(current_user.id)
+            redirect_to movie_path(@review.movie.id)
         end
     end
 
