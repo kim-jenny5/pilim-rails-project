@@ -5,7 +5,8 @@ class ReviewsController < ApplicationController
     end
 
     def new
-        @user = User.find_by_id(params[:user_id])
+        # @user = User.find_by_id(params[:user_id])
+        @movie = Movie.find_by_id(params[:movie_id])
         @review = Review.new 
     end
 
