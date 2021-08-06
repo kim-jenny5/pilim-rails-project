@@ -5,9 +5,9 @@ class MoviesController < ApplicationController
         # @newest_movies = Movie.newest_releases
         @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
         if params[:genre_name]
-            @movies = Movie.where(genre: params[:genre_name])
+            @movies = Movie.where(genre: params[:genre_name]) #move into model
         elsif params[:search]
-            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%")
+            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%") #movie into model
             if @movies.blank?
                 @newest_movies = Movie.newest_releases
                 flash[:message] = "'#{params[:search]}' not found."
