@@ -24,6 +24,8 @@
 <ul>
     <% @list.movies.each do |movie| %>
         <li><%= link_to movie.title, movie_path(movie) %></li>
-            <%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete %>        
+        <% if @list.user == current_user %>
+            <%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete %>
+        <% end %>
     <% end %>
 </ul>
