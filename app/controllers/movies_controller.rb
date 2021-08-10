@@ -2,8 +2,8 @@ class MoviesController < ApplicationController
     helper_method :star_rating
 
     def index
-        # @newest_movies = Movie.newest_releases
         @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
+
         if params[:genre_name]
             @movies = Movie.where(genre: params[:genre_name]) #move into model
         elsif params[:search]
@@ -12,7 +12,6 @@ class MoviesController < ApplicationController
                 @newest_movies = Movie.newest_releases
                 flash[:message] = "'#{params[:search]}' not found."
                 redirect_to movies_path
-                # render :index
             else
                 render :index
             end
@@ -39,8 +38,6 @@ class MoviesController < ApplicationController
     def show
         @movie = Movie.find_by_id(params[:id])
         @reviews = @movie.reviews.top_ten_recently_updated
-        # @movie_rating = star_rating(@movie)
-        # @movie.reviews.order(updated_at: :desc)
     end
 
     private

@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find_by_id(params[:id])
-        # byebug
 
         if @user.valid?
             if @user.update(user_params)

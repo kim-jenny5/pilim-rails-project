@@ -1,6 +1,3 @@
-<!-- <% @movie_genres.each do |movie| %>
-    <%= movie.genre %>
-<% end %> -->
 <p>Filter by Genre</p>
 <%= form_with url: movies_path, method: :get do |form| %>
     <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre %>

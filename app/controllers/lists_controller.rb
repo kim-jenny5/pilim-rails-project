@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
     def index
         if params[:search]
-            # @lists = List.where("title LIKE ?", "%#{params[:search]}%")
             @lists = List.joins(:lists_movies).joins(:movies).where("lists.title LIKE :term OR movies.title LIKE :term", term: "%#{params[:search]}%").distinct #move to model for a scope
             if @lists.blank?
                 flash[:message] = "Sorry. 😅 There's no such list."
@@ -17,7 +16,6 @@ class ListsController < ApplicationController
     end
 
     def create
-        # @list = current_user.lists.build(list_params)
         @list = List.new(list_params)
 
         if @list.save
@@ -50,7 +48,6 @@ class ListsController < ApplicationController
         byebug
         if @list.valid?
             @list.update(list_params)
-            # redirect_to user_reviews_path(current_user.id)
             redirect_to list_path(@list)
         end
     end

@@ -10,17 +10,14 @@ class ReviewsController < ApplicationController
     end
 
     def new
-        # @user = User.find_by_id(params[:user_id])
         @movie = Movie.find_by_id(params[:movie_id])
-        # @review = @movie.reviews.build
         @review = Review.new
-        # byebug
     end
 
     def create
         @movie = Movie.find_by_id(params[:movie_id])
         @review = @movie.reviews.build(review_params)
-        # @review = self.new(review_params)
+
         if @review.save
             redirect_to movie_path(@review.movie)
         end
@@ -32,9 +29,9 @@ class ReviewsController < ApplicationController
 
     def update
         @review = Review.find_by_id(params[:id])
+
         if @review.valid?
             @review.update(review_params)
-            # redirect_to user_reviews_path(current_user.id)
             redirect_to movie_path(@review.movie)
         end
     end

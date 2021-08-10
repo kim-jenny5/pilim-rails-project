@@ -17,7 +17,6 @@ class SessionsController < ApplicationController
     def destroy
         reset_session
         redirect_to login_path
-        # flash[:message] = "Bye bye! 👋🏻"
     end
 
     def google_omniauth
