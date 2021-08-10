@@ -6,4 +6,7 @@ class Movie < ApplicationRecord
 
     scope :newest_releases, -> { order(year: :desc) }
     scope :alphabetical_genre, -> { order(:genre) }
+
+    validates :title, :genre, presence: true
+    validates :year, numericality: true
 end
