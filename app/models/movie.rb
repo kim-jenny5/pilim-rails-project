@@ -8,5 +8,6 @@ class Movie < ApplicationRecord
     scope :alphabetical_genre, -> { order(:genre) }
 
     validates :title, :genre, presence: true
+    # validates :title, presence: true
     validates :year, numericality: true
 end
