@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+    # skip_before_action :require_login, only: [:index, :show]
+    before_action :require_login, except: [:index, :show]
+
     def index
         if params[:search]
             @lists = List.joins(:lists_movies).joins(:movies).where("lists.title LIKE :term OR movies.title LIKE :term", term: "%#{params[:search]}%").distinct #move to model for a scope

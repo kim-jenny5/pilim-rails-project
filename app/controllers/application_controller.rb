@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?#, :require_login
+    helper_method :current_user, :logged_in?, :require_login
 
     def home
     end
@@ -15,6 +15,9 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        redirect_to login_path if !logged_in?
+        unless logged_in?
+            flash[:error] = "🙅🏻‍♀️ You must be logged in to access this page. 🙅🏻‍♀️"
+            redirect_to login_path
+        end
     end
 end

@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+    # skip_before_action :require_login, only: [:index]
+    before_action :require_login, except: :index
+
     def index
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
