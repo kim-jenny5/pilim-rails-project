@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
     layout "app_home", only: :home
 
     def home
+        if logged_in?
+            redirect_to user_path(current_user)
+        end
     end
 
     private
