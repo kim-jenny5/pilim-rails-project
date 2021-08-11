@@ -3,12 +3,12 @@ class MoviesController < ApplicationController
     helper_method :star_rating
 
     def index
-        @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
+        @movie_genres = Movie.distinct_alphabetized_genre
 
         if params[:genre_name]
-            @movies = Movie.where(genre: params[:genre_name]) #move into model
+            @movies = Movie.filtered_by_genre(params[:genre_name])
         elsif params[:search]
-            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%") #movie into model
+            @movies = Movie.movie_search(params[:search])
             if @movies.blank?
                 @newest_movies = Movie.newest_releases
                 flash[:message] = "'#{params[:search]}' not found."
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
 
     def new
         @movie = Movie.new
-        @movie_genres = Movie.alphabetical_genre.select(:genre).distinct
+        @movie_genres = Movie.distinct_alphabetized_genre
     end
 
     def create

@@ -1,7 +1,7 @@
 <h1><%= @movie.title %></h1>
 Genre: <%= @movie.genre %><br>
 Released: <%= @movie.year %><br>
-Overall Rating: ⭐️ <%= star_rating(@movie) %><br>
+Overall Rating: ⭐️ <%=  star_rating(@movie) %><br>
 
 <%= link_to "Add a Review", new_movie_review_path(@movie) %><br>
 
