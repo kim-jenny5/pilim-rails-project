@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 
     def index
         if params[:search]
-            @lists = List.joins(:lists_movies).joins(:movies).where("lists.title LIKE :term OR movies.title LIKE :term", term: "%#{params[:search]}%").distinct #move to model for a scope
+            @lists = List.list_search(params[:search])
             if @lists.blank?
                 flash[:message] = "Sorry. 😅 There's no such list."
                 redirect_to lists_path
@@ -31,7 +31,7 @@ class ListsController < ApplicationController
         @list = List.find_by_id(params[:id])
 
         if params[:search]
-            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%") #movie into model
+            @movies = Movie.movie_search(params[:search])
             if @movies.blank?
                 flash[:message] = "'#{params[:search]}' not found."
                 render :show

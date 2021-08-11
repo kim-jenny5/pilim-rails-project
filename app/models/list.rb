@@ -4,4 +4,7 @@ class List < ApplicationRecord
   has_many :movies, through: :lists_movies
 
   validates :title, presence: true
+
+  scope :list_search, -> (term) { joins(:lists_movies).joins(:movies).where("lists.title LIKE :term OR movies.title LIKE :term", term: "%#{term}%").distinct }
+  # @lists = List.joins(:lists_movies).joins(:movies).where("lists.title LIKE :term OR movies.title LIKE :term", term: "%#{params[:search]}%").distinct #move to model for a scope
 end

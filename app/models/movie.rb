@@ -6,6 +6,7 @@ class Movie < ApplicationRecord
 
     scope :newest_releases, -> { order(year: :desc) }
     scope :alphabetical_genre, -> { order(:genre) }
+    scope :movie_search, -> (term) { where('title LIKE ?', "%#{term}%") }
 
     validates :title, :genre, presence: true
     # validates :title, presence: true
