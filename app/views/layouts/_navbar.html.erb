@@ -1,8 +1,0 @@
-<% if logged_in? %>
-    <a href="<%= user_path(current_user) %>">pilim</a>
-    <a href="<%= lists_path %>">All Lists</a>
-    <a href="<%= movies_path %>">All Movies</a>
-    <%= button_to "Log Out", logout_path %>
-<% else %>
-    <%= link_to "pilim", root_path %>
-<% end %>
