@@ -28,6 +28,7 @@ class MoviesController < ApplicationController
 
     def create
         @movie = Movie.new(movie_params)
+        @movie_genres = Movie.distinct_alphabetized_genre
 
         if @movie.save
             redirect_to movie_path(@movie)
@@ -47,7 +48,7 @@ class MoviesController < ApplicationController
         params.require(:movie).permit(:title, :genre, :year)
     end
 
-    def star_rating(movie)
+    def star_rating(movie) #move into helper method folder
         movie.reviews.count == 0 ? "n/a" : ((movie.reviews.sum(:rating).to_f)/(movie.reviews.count)).round(2)
     end
 end

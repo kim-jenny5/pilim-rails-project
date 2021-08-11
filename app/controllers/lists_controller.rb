@@ -36,6 +36,7 @@ class ListsController < ApplicationController
                 flash[:message] = "'#{params[:search]}' not found."
                 render :show
             else
+                flash[:message] = nil
                 render :show
             end
         end
