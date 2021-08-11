@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    # skip_before_action :require_login, only: [:show]
     before_action :require_login, except: :show
 
     def new
@@ -36,11 +35,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        # if logged_in?
-            @user = User.find_by_id(params[:id])
-        # else
-        #     redirect_to login_path
-        # end
+        @user = User.find_by_id(params[:id])
     end
 
     private
