@@ -1,0 +1,6 @@
+<% if flash[:message] %>
+    <% if current_page?(controller: "lists", action: "index") %>
+        <br><%= flash[:message] %><br>
+        <%= link_to "Would you like make one?", new_list_path %><br>
+    <% end %>
+<% end %>

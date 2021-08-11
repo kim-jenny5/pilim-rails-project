@@ -1,6 +1,5 @@
 class ListsController < ApplicationController
     before_action :require_login, except: [:index, :show]
-    # include ApplicationHelper
 
     def index
         if params[:search]
