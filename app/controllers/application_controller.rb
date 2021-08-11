@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?, :require_login
+    layout "no_user_navbar", only: :home
 
     def home
     end
