@@ -29,6 +29,7 @@ class SessionsController < ApplicationController
             u.email = auth[:info][:email]
             u.password = SecureRandom.hex(15)
         end
+
         if @user.valid?
             session[:user_id] = @user.id
             redirect_to user_path(@user)
@@ -45,6 +46,7 @@ class SessionsController < ApplicationController
             u.email = auth[:info][:email]
             u.password = SecureRandom.hex(15)
         end
+        
         if @user.valid?
             session[:user_id] = @user.id
             redirect_to user_path(@user)

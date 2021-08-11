@@ -32,13 +32,8 @@ class ListsController < ApplicationController
 
         if params[:search]
             @movies = Movie.movie_search(params[:search])
-            if @movies.blank?
-                flash[:message] = "'#{params[:search]}' not found."
-                render :show
-            else
-                flash[:message] = nil
-                render :show
-            end
+            @movies.blank? ? flash[:message] = "'#{params[:search]}' not found." : flash[:message] = nil
+            render :show
         end
     end
 
@@ -48,7 +43,6 @@ class ListsController < ApplicationController
 
     def update
         @list = List.find_by_id(params[:id])
-        byebug
         if @list.valid?
             @list.update(list_params)
             redirect_to list_path(@list)

@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
         @review = @movie.reviews.build(review_params)
 
         if @review.save
-            redirect_to movie_path(@review.movie)
+            redirect_to movie_path(@movie)
         end
     end
 
