@@ -3,7 +3,6 @@
 <% if @list.errors.any? %>
   <div id="error_explanation">
     <h3>🚨 Oops! We've got some errors here:</h3>
-
     <ul>
       <% @list.errors.each do |error| %>
         <li><%= error.full_message %></li>

@@ -6,11 +6,12 @@
 <% end %>
 
 <% if flash[:message] %>
-    <br>
-    <%= flash[:message] %><br>
+    <br><%= flash[:message] %><br>
     <%= link_to "Would you like make one?", new_list_path %><br>
 <% end %>
-<br>
+
+<br><br>
+
 <% @lists.each do |list| %>
     <%= link_to list.title, list_path(list) %><br>
 <% end %>
