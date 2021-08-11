@@ -13,7 +13,6 @@ class Movie < ApplicationRecord
     validates :title, :genre, presence: true
     validates :year, numericality: true
 
-    # def to_param
-    #     "#{title.parameterize}"
-    # end
+    extend FriendlyId
+    friendly_id :title, use: :slugged
 end
