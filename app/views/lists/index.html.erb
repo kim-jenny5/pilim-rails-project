@@ -7,6 +7,8 @@
 
 <% if flash[:message] %>
     <br><%= flash[:message] %><br>
+    <br><%= render "application/flash_messages" %>
+
     <%= link_to "Would you like make one?", new_list_path %><br>
 <% end %>
 
