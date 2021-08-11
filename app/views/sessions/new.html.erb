@@ -1,3 +1,7 @@
+<% if flash[:error] %>
+    <%= flash[:error] %>
+<% end %>
+
 <h1>Login</h1>
 or <%= link_to "create an account", signup_path %>
 <br><br>
