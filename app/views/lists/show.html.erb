@@ -18,9 +18,7 @@
             <%= movie.title %> (<%= movie.year %>)<br>
             <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id)  %><br>
         <% end %>
-        <% if flash[:message] %>
-            <%= flash[:message] %><br>
-            Would you like <%= link_to "create", new_movie_path %> this movie?
+        <%= render "application/flash_messages" %>
         <% else %>
             <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
         <% end %>

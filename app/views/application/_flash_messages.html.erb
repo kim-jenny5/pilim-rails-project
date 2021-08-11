@@ -1,6 +1,9 @@
 <% if flash[:message] %>
+    <br><%= flash[:message] %><br>
+    
     <% if current_page?(controller: "lists", action: "index") %>
-        <br><%= flash[:message] %><br>
-        <%= link_to "Would you like make one?", new_list_path %><br>
+        Would you like <%= link_to "make one", new_list_path %>?<br>
+    <% elsif current_page?(controller: "lists", action: "show") %>
+        Would you like <%= link_to "create", new_movie_path %> this movie?
     <% end %>
 <% end %>
