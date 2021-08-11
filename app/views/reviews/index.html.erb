@@ -17,13 +17,16 @@
 <% elsif @movie %>
     <h1>All Reviews for <%= link_to @movie.title, movie_path(@movie) %></h1>
     <% @reviews.each do |review| %>
+        <%= link_to review.user.username, user_path(review.user) %><br>
         <strong><%= review.title %></strong><br>
         ⭐️ <%= review.rating %>/5<br>
         <%= review.comment %><br>
-        <% if review.user_id == current_user.id %>
-            <%= link_to "Edit", edit_review_path(review) %>
-            <%= form_tag review_path(review), method: :delete do %>
-                <%= submit_tag "Delete" %>
+        <% if logged_in? %>
+            <% if review.user_id == current_user.id %>
+                <%= link_to "Edit", edit_review_path(review) %>
+                <%= form_tag review_path(review), method: :delete do %>
+                    <%= submit_tag "Delete" %>
+                <% end %>
             <% end %>
         <% end %>
         <br>
