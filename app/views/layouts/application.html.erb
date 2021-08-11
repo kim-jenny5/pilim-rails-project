@@ -17,9 +17,7 @@
       <%= render "layouts/no_user" %>
     <% end %>
 
-    <% if flash[:error] %>
-      <%= render "layouts/filter_error" %>
-    <% end %>
+    <%= render "layouts/filter_error" %>
 
     <%= yield %>
 
