@@ -11,6 +11,9 @@ class Movie < ApplicationRecord
     scope :filtered_by_genre, -> (genre) { where(genre: genre) }
 
     validates :title, :genre, presence: true
-    # validates :title, presence: true
     validates :year, numericality: true
+
+    # def to_param
+    #     "#{title.parameterize}"
+    # end
 end

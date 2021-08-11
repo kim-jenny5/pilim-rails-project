@@ -29,7 +29,7 @@ class ListsController < ApplicationController
 
     def show
         @list = List.find_by_id(params[:id])
-
+        
         if params[:search]
             @movies = Movie.movie_search(params[:search])
             @movies.blank? ? flash[:message] = "'#{params[:search]}' not found." : flash[:message] = nil
