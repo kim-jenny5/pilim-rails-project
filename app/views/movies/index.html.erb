@@ -9,11 +9,9 @@
     <%= search_field_tag :search, nil, placeholder: "Search by title" %>
     <%= submit_tag "Search", name: nil %>
 <% end %>
-<br>
 
 <% if flash[:message] %>
-    <%= flash[:message] %><br>
-    Would you like <%= link_to "add it", new_movie_path %>?
+    <%= render "application/flash_messages" %>
 <% end %>
 
 <% if params[:genre_name] || params[:search] %>
