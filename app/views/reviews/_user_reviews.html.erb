@@ -8,9 +8,9 @@
     <strong><%= review.title %></strong><br>
     ⭐️ <%= review.rating %>/5<br>
     <%= review.comment %><br>
-    <% if logged_in? %>
-        <% if @user == current_user %>
-            <%= render partial: "reviews/edit_delete", locals: {review: review} %>
-        <% end %>
+    
+    <% if @user == current_user %>
+        <%= render partial: "reviews/edit_delete", locals: {review: review} %>
     <% end %>
+    
 <% end %>
