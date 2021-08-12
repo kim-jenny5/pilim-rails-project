@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
     before_action :require_login, except: [:new, :create, :show]
-    # layout "login_signup", only: :new
 
     def new
         @user = User.new

@@ -14,15 +14,11 @@ Rails.application.routes.draw do
   post "/logout", to: "sessions#destroy"
 
   resources :users, only: [:show, :edit, :update] do
-    # resources :reviews, shallow: true, only: :index #users/1/reviews (located in review index)
-    resources :reviews, only: :index #users/1/reviews (located in review index)
+    resources :reviews, only: :index
   end
-  # resources :reviews
+
   resources :movies, except: [:edit, :update, :destroy] do
-    # resources :reviews, shallow: true #movies/1/reviews (located in movie show view)
-    resources :reviews, only: [:new, :create, :index] #movies/1/reviews (located in movie show view)
-    # post "add_movie", as: "add"
-    # delete "delete_movie", as: "delete"
+    resources :reviews, only: [:new, :create, :index]
   end
 
   resources :reviews, only: [:edit, :update, :destroy]
@@ -34,8 +30,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :sessions
-
+  #omniauths
   get "/auth/google_oauth2/callback", to: "sessions#google_omniauth"
   get "/auth/facebook/callback", to: "sessions#facebook_omniauth"
 end

@@ -38,11 +38,8 @@ class MoviesController < ApplicationController
     end
 
     def show
-        # @movie = Movie.find_by_id(params[:id])
-        # @movie = Movie.friendly.find_by_title(params[:id])
         @movie = Movie.friendly.find(params[:id])
         @reviews = @movie.reviews.top_ten_recently_updated
-        # byebug
     end
 
     private

@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-    # layout "login_signup"
-
     def new
        @user = User.new 
     end

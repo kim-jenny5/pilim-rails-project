@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?, :require_login
-    # layout "app_home", only: :home
 
     def home
         if logged_in?
