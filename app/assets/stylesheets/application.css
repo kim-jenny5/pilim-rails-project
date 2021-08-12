@@ -101,3 +101,20 @@
 .navbar {
     font-family: "Montserrat-Medium"
 }
+
+#sign_up_link {
+    font-family: "Montserrat-Bold";
+    background-color: #F25C54;
+    color: white;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 20px;
+}
+
+#login_link {
+    color: #F25C54;
+    padding-right: 25px;
+    padding-left: 25px;
+    border: 2px solid #F25C54;
+    border-radius: 20px;
+}
