@@ -5,12 +5,10 @@
 
 <% @reviews.each do |review| %>
     <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
-    <strong><%= review.title %></strong><br>
-    ⭐️ <%= review.rating %>/5<br>
-    <%= review.comment %><br>
-    
+    <%= render partial: "review_details", locals: {review: review} %>
+
     <% if @user == current_user %>
-        <%= render partial: "reviews/edit_delete", locals: {review: review} %>
+        <%= render partial: "edit_delete", locals: {review: review} %>
     <% end %>
     
 <% end %>
