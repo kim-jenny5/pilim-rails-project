@@ -4,7 +4,5 @@
 
     <% if review.user == current_user %>
         <%= render partial: "reviews/edit_delete", locals: {review: review} %>
-    <% end %>
-        
-    <br>
+    <% end %><br>
 <% end %>
