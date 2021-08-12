@@ -16,5 +16,4 @@ or <%= link_to "create an account", signup_path %>
     <p><%= submit_tag "Log In" %></p>
 <% end %>
 
-<%= button_to "Log in with Google", '/auth/google_oauth2' %>
-<%= button_to "Log in with Facebook", '/auth/facebook' %>
+<%= render "application/omniauth" %>
