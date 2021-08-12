@@ -14,6 +14,9 @@
 <% end %>
 
 <%= form_for @movie do |f| %>
-    <%= render partial: "form", locals: {f: f} %>
-    <%= f.submit "Add" %>
+  <p><%= f.text_field :title, placeholder: "Title" %></p>
+  <p><%= f.collection_select :genre, @movie_genres, :genre, :genre, {prompt: "Choose the genre"} %></p>
+  <p><%= f.text_field :genre, placeholder: "Don't see the genre? Add it here!" %></p>
+  <p><%= f.text_field :year, placeholder: "Year" %></p>
+  <%= f.submit "Add" %>
 <% end %>
