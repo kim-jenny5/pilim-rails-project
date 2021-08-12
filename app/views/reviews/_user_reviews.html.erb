@@ -1,0 +1,14 @@
+    <h1>Reviews by</h1>
+    <%= link_to @user.username, user_path(@user) %>
+    <br><br>
+    <% @reviews.each do |review| %>
+        <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
+        <strong><%= review.title %></strong><br>
+        ⭐️ <%= review.rating %>/5<br>
+        <%= review.comment %><br>
+        <% if logged_in? %>
+            <% if @user == current_user %>
+                <%= render partial: "reviews/edit_delete", locals: {review: review} %>
+            <% end %>
+        <% end %>
+    <% end %>

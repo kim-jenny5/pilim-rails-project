@@ -9,7 +9,7 @@
         <%= review.comment %><br>
         <% if logged_in? %>
             <% if @user == current_user %>
-                <%= render partial: "application/edit_delete", locals: {review: review} %>
+                <%= render partial: "reviews/edit_delete", locals: {review: review} %>
             <% end %>
         <% end %>
     <% end %>
@@ -22,7 +22,7 @@
         <%= review.comment %><br>
         <% if logged_in? %>
             <% if review.user == current_user %>
-                <%= render partial: "application/edit_delete", locals: {review: review} %>
+                <%= render partial: "reviews/edit_delete", locals: {review: review} %>
             <% end %>
         <% end %>
         <br>
