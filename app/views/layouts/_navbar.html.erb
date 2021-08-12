@@ -1,11 +1,13 @@
-<nav class="navbar navbar-light bg-light">
-    <% if logged_in? %>
-        <%= render "layouts/logged_in" %>
-    <% elsif current_page?(signup_path) || current_page?(login_path) %>
-        <%= render "layouts/login_signup" %>
-    <% elsif current_page?(root_path) %>
-        <%= render "layouts/home" %>
-    <% else %>
-        <%= render "layouts/no_user" %>
-    <% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <% if logged_in? %>
+            <%= render "layouts/logged_in" %>
+        <% elsif current_page?(signup_path) || current_page?(login_path) %>
+            <%= render "layouts/login_signup" %>
+        <% elsif current_page?(root_path) %>
+            <%= render "layouts/home" %>
+        <% else %>
+            <%= render "layouts/no_user" %>
+        <% end %>
+    </div>
 </nav>
