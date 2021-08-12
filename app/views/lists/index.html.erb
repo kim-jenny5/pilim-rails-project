@@ -5,7 +5,9 @@
     <%= submit_tag "Search", name: nil %>
 <% end %>
 
-<%= render "application/flash_messages" %>
+<% if flash[:message] %>
+    <%= render "application/flash_messages" %>
+<% end %>
 
 <br><br>
 
