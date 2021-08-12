@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?, :require_login
-    layout "app_home", only: :home
+    # layout "app_home", only: :home
 
     def home
         if logged_in?
@@ -11,9 +11,7 @@ class ApplicationController < ActionController::Base
     private
 
     def current_user
-        # @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
         @current_user ||= User.friendly.find(session[:user_id]) if session[:user_id]
-        # byebug
     end
 
     def logged_in?
