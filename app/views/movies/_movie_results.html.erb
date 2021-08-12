@@ -1,0 +1,3 @@
+<% term.each do |movie| %>
+    <%= link_to "#{movie.title} (#{movie.year})", movie_path(movie) %><br>
+<% end %>
