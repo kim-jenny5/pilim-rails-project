@@ -1,0 +1,8 @@
+<% if flash[:message] %>
+    <%= link_to "Edit", edit_list_path(@list) %> 
+    <%= form_tag list_path(@list), method: :delete do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
+<% else %>
+    <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br><br>
+<% end %>
