@@ -15,4 +15,8 @@ class User < ApplicationRecord
     def to_param
         username
     end
+
+    def joined
+        created_at.strftime("%-m/%-d/%Y")
+    end
 end

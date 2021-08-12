@@ -1,5 +1,5 @@
 <h2>@<%= @user.username %></h2>
-<p>Joined: <%= @user.created_at.strftime("%-m/%-d/%Y") %></p>
+<p>Joined: <%= @user.joined %></p>
 <p><%= link_to "#{@user.username}'s Reviews", user_reviews_path(@user) %></p>
 <h3><%= @user.username %>'s Lists</h3>
 <% @user.lists.each do |list| %>
