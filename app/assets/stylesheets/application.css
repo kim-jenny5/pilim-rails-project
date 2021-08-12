@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@font-face {
+    font-family: "Montserrat-Thin";
+    src: url("Montserrat-Thin.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-SemiBoldItalic";
+    src: url("Montserrat-SemiBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url("Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-MediumItalic";
+    src: url("Montserrat-MediumItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url("Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-LightItalic";
+    src: url("Montserrat-LightItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Light";
+    src: url("Montserrat-Light.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Italic";
+    src: url("Montserrat-Italic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-ExtraLightItalic";
+    src: url("Montserrat-ExtraLightItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-ExtraLight";
+    src: url("Montserrat-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-ExtraBoldItalic";
+    src: url("Montserrat-ExtraBoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url("Montserrat-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-BoldItalic";
+    src: url("Montserrat-BoldItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-BlackItalic";
+    src: url("Montserrat-BlackItalic.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat-Black";
+    src: url("Montserrat-Black.ttf");
+}
+
+/* .navbar-font {
+    font-family: "Montserrat-Medium"
+} */
