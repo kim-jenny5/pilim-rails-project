@@ -1,17 +1,8 @@
 <h1>Create a New List</h1>
 
-<% if @list.errors.any? %>
-  <div id="error_explanation">
-    <h3>🚨 Oops! We've got some errors here:</h3>
-    <ul>
-      <% @list.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: "application/error_messages", locals: { term: @list } %>
 
 <%= form_for @list do |f| %>
-    <%= render partial: "form", locals: {f: f} %>
+    <%= render partial: "form", locals: { f: f } %>
     <p><%= f.submit "Create" %></p>
 <% end %>

@@ -1,15 +1,6 @@
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h3>Uh oh! We've got an error.</h3>
-    <ul>
-      <% @user.errors.each do |error| %>
-        🚨 <%= error.full_message %>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <h1>Edit your profile</h1>
+
+<%= render partial: "application/error_messages", locals: { term: @user } %>
 
 <%= form_for @user do |f| %>
     <p><%= f.text_field :first_name, placeholder: "First Name" %></p>

@@ -1,14 +1,4 @@
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h3>Oops! We've got some errors here.</h3>
-
-    <ul>
-      <% @user.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: "application/error_messages", locals: { term: @user } %>
 
 <h1>Create an account</h1>
 or <%= link_to "log in", login_path %>

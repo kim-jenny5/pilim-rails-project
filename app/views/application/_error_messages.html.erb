@@ -1,0 +1,10 @@
+<div id="error_explanation">
+    <% if term.errors.any? %>
+        <h3>🚨 Oops! We've got some errors here:</h3>
+        <ul>
+        <% term.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+    <% end %>
+    </ul>
+</div>

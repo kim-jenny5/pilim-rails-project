@@ -1,17 +1,7 @@
 <h1>Add a New Movie</h1>
 <p><small>⚠️ You won't be able to edit it later, so make sure all the information is correct! ⚠️</small></p>
 
-<% if @movie.errors.any? %>
-  <div id="error_explanation">
-    <h3>Oops! We've got some errors here.</h3>
-
-    <ul>
-      <% @movie.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: "application/error_messages", locals: { term: @movie } %>
 
 <%= form_for @movie do |f| %>
   <p><%= f.text_field :title, placeholder: "Title" %></p>
