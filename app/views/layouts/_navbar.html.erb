@@ -1,0 +1,9 @@
+<% if logged_in? %>
+    <%= render "layouts/logged_in" %>
+<% elsif current_page?(signup_path) || current_page?(login_path) %>
+    <%= render "layouts/login_signup" %>
+<% elsif current_page?(root_path) %>
+    <%= render "layouts/home" %>
+<% else %>
+    <%= render "layouts/no_user" %>
+<% end %>
