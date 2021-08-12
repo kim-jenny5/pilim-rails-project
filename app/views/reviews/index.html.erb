@@ -1,30 +1,5 @@
 <% if @user %>
-    <h1>Reviews by</h1>
-    <%= link_to @user.username, user_path(@user) %>
-    <br><br>
-    <% @reviews.each do |review| %>
-        <p><%= link_to review.movie.title, movie_path(review.movie) %></p>
-        <strong><%= review.title %></strong><br>
-        ⭐️ <%= review.rating %>/5<br>
-        <%= review.comment %><br>
-        <% if logged_in? %>
-            <% if @user == current_user %>
-                <%= render partial: "reviews/edit_delete", locals: {review: review} %>
-            <% end %>
-        <% end %>
-    <% end %>
+    <%= render "user_reviews" %>
 <% elsif @movie %>
-    <h1>All Reviews for <%= link_to @movie.title, movie_path(@movie) %></h1>
-    <% @reviews.each do |review| %>
-        <%= link_to review.user.username, user_path(review.user) %><br>
-        <strong><%= review.title %></strong><br>
-        ⭐️ <%= review.rating %>/5<br>
-        <%= review.comment %><br>
-        <% if logged_in? %>
-            <% if review.user == current_user %>
-                <%= render partial: "reviews/edit_delete", locals: {review: review} %>
-            <% end %>
-        <% end %>
-        <br>
-    <% end %>    
+    <%= render "movie_reviews" %>
 <% end %>
