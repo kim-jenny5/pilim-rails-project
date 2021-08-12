@@ -9,10 +9,7 @@
         <%= review.comment %><br>
         <% if logged_in? %>
             <% if @user == current_user %>
-                <%= link_to "Edit", edit_review_path(review) %>
-                <%= form_tag review_path(review), method: :delete do %>
-                    <%= submit_tag "Delete" %>
-                <% end %>
+                <%= render partial: "application/edit_delete", locals: {review: review} %>
             <% end %>
         <% end %>
     <% end %>

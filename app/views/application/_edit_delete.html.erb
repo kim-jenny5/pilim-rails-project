@@ -1,6 +1,27 @@
-<% if current_page?(controller: "lists", action: "show") %>
+
+
+<% if params[:user_id] || params[:id] %>
+    <%= link_to "Edit", edit_review_path(review) %>
+    <%= form_tag review_path(review), method: :delete do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
+<% elsif current_page?(controller: "lists", action: "show") %>
     <%= link_to "Edit", edit_list_path(@list) %>
     <%= form_tag list_path(@list), method: :delete do %>
         <%= submit_tag "Delete" %>
     <% end %>
 <% end %>
+
+<!-- <% if current_page?(controller: "lists", action: "show") %>
+    <%= link_to "Edit", edit_list_path(@list) %>
+    <%= form_tag list_path(@list), method: :delete do %>
+        <%= submit_tag "Delete" %>
+    <% end %>
+<% else %>
+    <% if params[:user_id] || params[:movie_id] %>
+        <%= link_to "Edit", edit_review_path(review) %>
+        <%= form_tag review_path(review), method: :delete do %>
+            <%= submit_tag "Delete" %>
+        <% end %>
+    <% end %>
+<% end %> -->
