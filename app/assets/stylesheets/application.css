@@ -141,10 +141,6 @@ a:active {
     color: #F7B267 !important;
 }
 
-body {
-    background-color: white;
-}
-
 /* HEADER & FOOTER --------------------------------------------- */
 
 .navbar-custom {
@@ -168,10 +164,10 @@ body {
     color: black;
 }
 
-#sign_up_link {
+#signup_link {
     font-family: "Montserrat-Bold";
     background-color: #F25C54;
-    color: white;
+    color: white !important;
     padding-right: 25px;
     padding-left: 25px;
     border-radius: 20px;
@@ -193,7 +189,7 @@ body {
 }
 
 footer {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     width: 100%;
     background-color: #fdf7f0;
