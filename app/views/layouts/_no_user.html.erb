@@ -1,10 +1,13 @@
 <a class="navbar-brand" href="<%= root_path %>">
-    <img src="film.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-    pilim
+    <span class="fs-3 no_picture_logo">pilim</span>
 </a>
-<a href="<%= lists_path %>">All Lists</a>
-<a href="<%= movies_path %>">All Movies</a>
+<div class="collapse navbar-collapse">
+    <div class="navbar-nav">
+        <a class="nav-link" href="<%= lists_path %>">All Lists</a>
+        <a class="nav-link" href="<%= movies_path %>">All Movies</a>
+    </div>
+</div>
 <div class="navbar-nav navbar-right">
-    <a class="nav-item nav-link mx-3" href="<%= login_path %>">Log In</a>
+    <a class="nav-item nav-link mx-3" id="login_link" href="<%= login_path %>">Log In</a>
     <a class="nav-item nav-link mx-3" id="sign_up_link" href="<%= signup_path %>">Sign Up</a>
 </div>

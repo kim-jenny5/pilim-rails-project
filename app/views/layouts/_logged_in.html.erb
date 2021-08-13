@@ -1,9 +1,12 @@
 <a class="navbar-brand" href="<%= user_path(current_user) %>">
-    <img src="film.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-    pilim
+    <span class="fs-3 no_picture_logo">pilim</span>
 </a>
-
-<a href="<%= user_path(current_user) %>">pilim</a>
-<a href="<%= lists_path %>">All Lists</a>
-<a href="<%= movies_path %>">All Movies</a>
-<%= button_to "Log Out", logout_path %>
+<div class="collapse navbar-collapse">
+    <div class="navbar-nav">
+        <a class="nav-link" href="<%= lists_path %>">All Lists</a>
+        <a class="nav-link" href="<%= movies_path %>">All Movies</a>
+    </div>
+</div>
+<div class="navbar-nav navbar-right">
+    <%= button_to "Log Out", logout_path, {class: "logout_button"} %>
+</div>

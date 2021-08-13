@@ -98,8 +98,16 @@
     src: url("Montserrat-Black.ttf");
 }
 
+* {
+    font-family: "Montserrat-Regular"
+}
+
 .navbar {
     font-family: "Montserrat-Medium"
+}
+
+.no_picture_logo {
+    font-family: "Montserrat-Bold";
 }
 
 #sign_up_link {
@@ -117,4 +125,11 @@
     padding-left: 25px;
     border: 2px solid #F25C54;
     border-radius: 20px;
+}
+
+.logout_button {
+    font-family: "Montserrat-Bold";
+    color: #F25C54;
+    background-color: transparent;
+    border: none;
 }
