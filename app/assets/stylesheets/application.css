@@ -280,5 +280,9 @@ h1.homepage_text {
 /* USER DASHBOARD (SHOW PAGE) --------------------------------------------- */
 
 .profile_container {
-    max-width: 450px;
+    max-width: 700px;
+}
+
+.profile_padding {
+    padding-left: 100px;
 }
