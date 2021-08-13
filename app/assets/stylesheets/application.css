@@ -173,3 +173,8 @@ footer {
 #copyright {
     font-size: smaller;
 }
+
+.homepage_img {
+    float: right;
+    margin-right: 40px;
+}
