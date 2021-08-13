@@ -276,3 +276,9 @@ h1.homepage_text {
     /* font-family: "Montserrat-Light"; */
     font-size: smaller !important;
 }
+
+/* USER DASHBOARD (SHOW PAGE) --------------------------------------------- */
+
+.profile_container {
+    max-width: 450px;
+}

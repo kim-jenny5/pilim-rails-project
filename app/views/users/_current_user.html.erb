@@ -1,10 +1,22 @@
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-<h2>@<%= @user.username %></h2>
-<%= link_to "Edit Profile", edit_user_path(@user) %>
-<p>Joined: <%= @user.joined %></p>
-<p><%= link_to "Create a New List", new_list_path %></p>
-<p><%= link_to "My Reviews", user_reviews_path(@user) %></p>
-<h3>My Lists</h3>
-<% @user.lists.each do |list| %>
+<div class="container-fluid profile_container">
+  <h2>@<%= @user.username %></h2>
+  <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+  <h5>Joined: <%= @user.joined %></h5>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <%= link_to "Edit Profile", edit_user_path(@user), {class: "nav-link d-inline-flex"} %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Create a New List", new_list_path, {class: "nav-link d-inline-flex"} %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "My Reviews", user_reviews_path(@user), {class: "nav-link d-inline-flex"} %>
+    </li>
+  </ul>
+</div>
+<div class="container-fluid">
+  <h3>My Lists</h3>
+  <% @user.lists.each do |list| %>
     <%= link_to list.title, list_path(list) %><br>
-<% end %>
+  <% end %>
+</div>
