@@ -117,6 +117,10 @@
 
 /* GENERAL --------------------------------------------- */
 
+/* html {
+    overflow: scroll;
+} */
+
 * {
     font-family: "Montserrat-Regular"
 }
@@ -135,6 +139,10 @@ a:active {
 
 .custom_link:hover {
     color: #F7B267 !important;
+}
+
+body {
+    background-color: white;
 }
 
 /* HEADER & FOOTER --------------------------------------------- */
@@ -185,7 +193,7 @@ a:active {
 }
 
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #fdf7f0;
