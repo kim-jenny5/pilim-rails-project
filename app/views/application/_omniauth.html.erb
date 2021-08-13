@@ -1,7 +1,17 @@
-<% if current_page?(controller: "sessions", action: "new") %>
-    <%= button_to "Log in with Google", '/auth/google_oauth2' %>
-    <%= button_to "Log in with Facebook", '/auth/facebook' %>
-<% else %>
-    <%= button_to "Sign Up with Google", '/auth/google_oauth2' %>
-    <%= button_to "Sign Up with Facebook", '/auth/facebook' %>
-<% end %>
+<div class="row">
+    <% if current_page?(controller: "sessions", action: "new") %>
+        <div class="col-5">
+            <%= button_to "Log in with Google", '/auth/google_oauth2', class: "btn btn-google"%>
+        </div>
+        <div class="col">
+            <%= button_to "Log in with Facebook", '/auth/facebook', class: "btn btn-facebook"%>
+        </div>
+    <% else %>
+        <div class="col-5">
+            <%= button_to "Sign Up with Google", '/auth/google_oauth2', class: "btn btn-google" %>
+        </div>
+        <div class="col">
+            <%= button_to "Sign Up with Facebook", '/auth/facebook', class: "btn btn-facebook" %>
+        </div>
+    <% end %>
+</div>

@@ -205,16 +205,20 @@ h1.homepage_text {
     margin-right: 40px;
 }
 
-/* SIGNUP FORM --------------------------------------------- */
+/* SIGNUP & LOGIN FORM --------------------------------------------- */
 
-/* .signup_img {
-    float: left;
-    margin-left: 20px;
+.page_padding {
+    margin-top: 100px;
 }
 
-.form-group {
-    width: 15%;
-} */
+.form_padding {
+    padding-left: 250px;   
+}
+
+.alt_button {
+    color: #F27059;
+    font-family: "Montserrat-Medium";
+}
 
 .first_last_name {
     width: 50%;
@@ -226,11 +230,14 @@ h1.homepage_text {
    color: white !important;
 }
 
-.page_padding {
-    margin-top: 100px;
+.btn-google {
+    background-color: #4267B2 !important;
+    color: white !important;
+
 }
 
-.form_padding {
-    padding-left: 150px;
-    
+.btn-facebook {
+    background-color: #4285F4 !important;
+    color: white !important;
+    /* padding-left: 10px; */
 }
