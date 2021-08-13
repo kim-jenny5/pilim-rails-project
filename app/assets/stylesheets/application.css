@@ -16,86 +16,103 @@
 @font-face {
     font-family: "Montserrat-Thin";
     src: url("Montserrat-Thin.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-SemiBoldItalic";
     src: url("Montserrat-SemiBoldItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-SemiBold";
     src: url("Montserrat-SemiBold.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-Regular";
     src: url("Montserrat-Regular.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-MediumItalic";
     src: url("Montserrat-MediumItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-Medium";
     src: url("Montserrat-Medium.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-LightItalic";
     src: url("Montserrat-LightItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-Light";
     src: url("Montserrat-Light.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-Italic";
     src: url("Montserrat-Italic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-ExtraLightItalic";
     src: url("Montserrat-ExtraLightItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-ExtraLight";
     src: url("Montserrat-ExtraLight.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-ExtraBoldItalic";
     src: url("Montserrat-ExtraBoldItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-ExtraBold";
     src: url("Montserrat-ExtraBold.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-BoldItalic";
     src: url("Montserrat-BoldItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-Bold";
     src: url("Montserrat-Bold.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-BlackItalic";
     src: url("Montserrat-BlackItalic.ttf");
+    font-display: block;
 }
 
 @font-face {
     font-family: "Montserrat-Black";
     src: url("Montserrat-Black.ttf");
+    font-display: block;
 }
 
 /* GENERAL --------------------------------------------- */
@@ -112,13 +129,14 @@ a:visited {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: none;
-}
-
 a:active {
     text-decoration: none;
 }
+
+.custom_link:hover {
+    color: #F7B267;
+}
+
 
 /* HEADER & FOOTER --------------------------------------------- */
 
@@ -197,6 +215,11 @@ h1.homepage_text {
     margin-left: 100px;
     margin-top: 100px;
     position: absolute;
+}
+
+.card-link {
+    font-family: "Montserrat-SemiBold";
+    color: #F27059;
 }
 
 .homepage_img {
