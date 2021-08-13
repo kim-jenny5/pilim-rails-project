@@ -226,6 +226,11 @@ h1.homepage_text {
    color: white !important;
 }
 
-.signup_padding {
+.page_padding {
     margin-top: 100px;
+}
+
+.form_padding {
+    padding-left: 150px;
+    
 }
