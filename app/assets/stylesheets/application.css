@@ -138,7 +138,7 @@ a:active {
 }
 
 .alert-custom {
-    
+
 }
 
 
@@ -249,6 +249,11 @@ h1.homepage_text {
 
 .first_last_name {
     width: 50%;
+}
+
+#incorrect_credentials {
+    font-family: "Montserrat-Light";
+    font-size: 14px;
 }
 
 .btn-custom {
