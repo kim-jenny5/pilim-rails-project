@@ -267,13 +267,16 @@ h1.homepage_text {
 }
 
 .btn-google {
-    background-color: #4267B2 !important;
+    background-color: #4285F4 !important;
     color: white !important;
-
+    /* font-family: "Montserrat-Light"; */
+    font-size: smaller !important;
 }
 
 .btn-facebook {
-    background-color: #4285F4 !important;
+    background-color: #4267B2 !important;
+
     color: white !important;
-    /* padding-left: 10px; */
+    /* font-family: "Montserrat-Light"; */
+    font-size: smaller !important;
 }
