@@ -184,13 +184,17 @@ footer {
     margin-left: 100px;
 }
 
+h1.homepage {
+    font-family: "Montserrat-Bold";
+    margin-top: 50px;
+}
+
+.homepage_movielists {
+    margin-left: 150px;
+}
+
 .homepage_img {
     float: right;
     margin-right: 40px;
     bottom: 0px;
-}
-
-h1.homepage {
-    font-family: "Montserrat-Bold";
-    margin-top: 50px;
 }
