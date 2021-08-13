@@ -1,24 +1,68 @@
-<div class="container-fluid float-start profile_container mt-5">
-<div class="row profile_padding">
-  <h2>@<%= @user.username %></h2>
-  <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-  <h5>Joined: <%= @user.joined %></h5>
-  <ul class="nav flex-column">
-    <li class="nav-item">
-      <%= link_to "Edit Profile", edit_user_path(@user), {class: "nav-link d-inline-flex"} %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Create a New List", new_list_path, {class: "nav-link d-inline-flex"} %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "My Reviews", user_reviews_path(@user), {class: "nav-link d-inline-flex"} %>
-    </li>
-  </ul>
+<!-- <div class="container-fluid float-start profile_container mt-5">
+  <div class="row profile_padding">
+    <h2>@<%= @user.username %></h2>
+    <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+    <h5>Joined: <%= @user.joined %></h5>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <%= link_to "Edit Profile", edit_user_path(@user), {class: "nav-link d-inline-flex"} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Create a New List", new_list_path, {class: "nav-link d-inline-flex"} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "My Reviews", user_reviews_path(@user), {class: "nav-link d-inline-flex"} %>
+      </li>
+    </ul>
   </div>
 </div>
 <div class="container-fluid">
   <h3>My Lists</h3>
-  <% @user.lists.each do |list| %>
-    <%= link_to list.title, list_path(list) %><br>
-  <% end %>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @user.lists.each do |list| %>
+      <div class="col">
+        <div class="card custom_card">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to list.title, list_path(list) %></h5>
+            <p class="card-text"><%= list.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> -->
+<div class="container-fluid float-start mt-5 mx-auto">
+  <div class="row stick-top">
+    <div class="col-3 text-end">
+      <h2>@<%= @user.username %></h2>
+      <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+      <h5>Joined: <%= @user.joined %></h5>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <%= link_to "Edit Profile", edit_user_path(@user), {class: "nav-link d-inline-flex"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create a New List", new_list_path, {class: "nav-link d-inline-flex"} %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Reviews", user_reviews_path(@user), {class: "nav-link d-inline-flex"} %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-7 mt-4">
+      <h4>My Lists</h4>
+      <div class="row row-cols-1 row-cols-3 g-4">
+        <% @user.lists.each do |list| %>
+          <div class="col">
+            <div class="card h-100  custom_card">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to list.title, list_path(list) %></h5>
+                <p class="card-text"><%= list.description %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

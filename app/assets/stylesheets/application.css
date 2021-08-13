@@ -286,3 +286,15 @@ h1.homepage_text {
 .profile_padding {
     padding-left: 100px;
 }
+
+/* .custom_card {
+    width: 75%;
+} */
+.fixed_profile {
+    position: fixed;
+}
+
+.fixed_lists {
+    position: relative;
+    left: 600px;
+}
