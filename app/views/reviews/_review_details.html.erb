@@ -1,3 +1,5 @@
-<strong><%= review.title %></strong><br>
-⭐️ <%= review.rating %>/5<br>
+<strong><%= review.title %></strong>
+<% unless review.rating.blank? %>
+    ⭐️ <%= review.rating %>/5<br>
+<% end %>
 <%= review.comment %><br>
