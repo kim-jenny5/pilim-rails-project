@@ -133,3 +133,11 @@
     background-color: transparent;
     border: none;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fdf7f0;
+    text-align: center;
+}
