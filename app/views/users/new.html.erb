@@ -1,35 +1,48 @@
-    <h1>Create an account</h1>
-    or <%= link_to "log in", login_path %>
-    <br><br>
-
-    <%= render partial: "application/error_messages", locals: { term: @user } %>
-
-    <div class="form-group">
-        <%= form_for :user do |f| %>
-            <div class="row mb-3 first_last_name">
-                <div class="col-6">
-                    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-                </div>
-                <div class="col-6">
-                    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-                </div>
-                <div class="col-8 mt-3">
-                    <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                        <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
-                    </div>
-                </div>
-                <div class="col-7 mt-3">
-                    <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
-                </div>
-                <div class="col-7 mt-3">
-                    <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-                </div>
-                <div class="col-12">
-                    <%= f.submit "Sign Up", class: "btn btn-custom" %>
-                </div>
-            </div>
-        <% end %>
-
-        <%= render "application/omniauth" %>
+<div class="container signup_padding">
+  <div class="row">
+    <!-- <div class="text-center"> -->
+    <!-- </div> -->
+    <div class="col-4">
+      <picture class="signup_img">
+        <img src="happy_feeling.svg" class="img-fluid" alt="illustration of woman holding balloons">
+      </picture>
     </div>
+    <div class="col-8">
+      <div class="row text-left">
+        <ul class="list-inline">
+            <li class="list-inline-item h4">Create an account</li>
+            <li class="list-inline-item">or <%= link_to "log in", login_path %></li>
+        </ul>
+      </div>
+      <div class="form-group mx-auto">
+        <%= render partial: "application/error_messages", locals: { term: @user } %>
+        <%= form_for :user do |f| %>
+          <div class="row mb-3 first_last_name">
+            <div class="col-6">
+              <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+            </div>
+            <div class="col-6">
+              <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+            </div>
+            <div class="col-8 mt-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+              </div>
+            </div>
+            <div class="col-7 mt-3">
+              <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+            </div>
+            <div class="col-7 mt-3">
+              <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+            </div>
+            <div class="col-12 mt-3">
+              <%= f.submit "Sign Up", class: "btn btn-custom" %>
+            </div>
+          </div>
+        <% end %>
+        <%= render "application/omniauth" %>
+      </div>
+    </div>
+  </div>
+</div>

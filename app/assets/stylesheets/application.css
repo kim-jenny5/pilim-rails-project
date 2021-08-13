@@ -207,14 +207,25 @@ h1.homepage_text {
 
 /* SIGNUP FORM --------------------------------------------- */
 
+/* .signup_img {
+    float: left;
+    margin-left: 20px;
+}
+
 .form-group {
     width: 15%;
 }
 
 .first_last_name {
     width: 150%
-}
+} */
 
 .btn-custom {
-   background-color: #F7B267 !important;
+   background-color: #F25C54 !important;
+   font-family: "Montserrat-SemiBold";
+   color: white !important;
+}
+
+.signup_padding {
+    margin-top: 125px;
 }
