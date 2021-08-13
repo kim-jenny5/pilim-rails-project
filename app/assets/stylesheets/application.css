@@ -170,7 +170,7 @@ a:active {
 
 #signup_link {
     font-family: "Montserrat-Bold";
-    background-color: #F25C54;
+    background-color: #F25C54 !important;
     color: white !important;
     padding-right: 25px;
     padding-left: 25px;
