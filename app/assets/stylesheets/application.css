@@ -163,5 +163,8 @@ footer {
 }
 
 #copyright {
-    font-size: small;
+    font-size: smaller;
+}
+
+.contact {
 }
