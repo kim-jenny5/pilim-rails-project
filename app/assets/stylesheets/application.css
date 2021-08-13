@@ -283,22 +283,7 @@ h1.homepage_text {
 
 /* USER DASHBOARD (SHOW PAGE) --------------------------------------------- */
 
-.profile_container {
-    max-width: 700px;
-}
-
-.profile_padding {
-    padding-left: 100px;
-}
-
-/* .custom_card {
-    width: 75%;
-} */
-.fixed_profile {
-    position: fixed;
-}
-
-.fixed_lists {
-    position: relative;
-    left: 600px;
+.someones_list {
+    font-family: "Montserrat-LightItalic";
+    font-size: 18px;
 }
