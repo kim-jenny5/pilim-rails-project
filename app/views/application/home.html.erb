@@ -1,29 +1,33 @@
-<h1 class="homepage">If Rotten Tomatoes and Goodreads had a child...</h1>
-<h2 class="homepage">it'd probably look like <em>this</em></h2>
+<div class="container">
+    <h1 class="homepage_text">If Rotten Tomatoes and Goodreads had a child...</h1>
+    <h2 class="homepage_text">it'd probably look like <em>this</em></h2>
 
-<!-- <div class="homepage_movielists">
-    Click <a href="<%= lists_path %>">here</a> to see all curated lists from current users.<br>
-    Click <a href="<%= movies_path %>">here</a> to see all movies.
-</div> -->
+    <picture class="homepage_img">
+        <img src="home_cinema.svg" class="img-fluid" alt="illustration of man watching movie">
+    </picture>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Curated Movie Lists</h5>
-    <h6 class="card-subtitle mb-2 text-muted">created by and for all users! ❤️</h6>
-    <p class="card-text">Liked a particular movie and want to look for similar movies?</p>
-    <a href="<%= lists_path %>" class="card-link">All Lists</a>
-  </div>
+    <div class="card_group">
+        <div class="row row-cols-1 row-cols-md-2 g-4" style="width: 40rem;">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Movie Reviews</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">from casual viewers, just like you</h6>
+                        <p class="card-text">Search for reviews before deciding on today's pick for movie night! 💫💫</p>
+                        <a href="<%= movies_path %>" class="card-link">All Movies</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Curated Movie Lists</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">created by and for all users! ❤️</h6>
+                        <p class="card-text">Liked a particular movie and want to look for similar movies?</p>
+                        <a href="<%= lists_path %>" class="card-link">All Lists</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Movie Reviews</h5>
-    <h6 class="card-subtitle mb-2 text-muted">from casual viewers, just like you</h6>
-    <p class="card-text">Search for reviews before deciding on today's pick for movie night! 💫💫</p>
-    <a href="<%= movies_path %>" class="card-link">All Movies</a>
-  </div>
-</div>
-
-<picture class="homepage_img">
-    <img src="home_cinema.svg" class="img-fluid" alt="illustration of man watching movie">
-</picture>
