@@ -204,3 +204,9 @@ h1.homepage_text {
     line-height: 0;
     margin-right: 40px;
 }
+
+/* SIGNUP FORM --------------------------------------------- */
+
+.form-group {
+    width: 15%;
+}
