@@ -134,22 +134,22 @@ a:active {
 }
 
 .custom_link:hover {
-    color: #F7B267;
+    color: #F7B267 !important;
 }
-
-.alert-custom {
-
-}
-
 
 /* HEADER & FOOTER --------------------------------------------- */
 
-.navbar {
-    font-family: "Montserrat-Medium"
-}
-
 .navbar-custom {
     background-color: #fdf7f0;
+}
+
+.nav-link {
+    color: #F27059 !important;
+    font-family: "Montserrat-Medium";
+}
+
+.nav-link:hover {
+    color: #F7B267 !important;
 }
 
 .no_picture_logo {
@@ -201,10 +201,6 @@ footer {
 }
 
 /* HOMEPAGE --------------------------------------------- */
-
-.homepage {
-    
-}
 
 .homepage_text {
     margin-left: 100px;
