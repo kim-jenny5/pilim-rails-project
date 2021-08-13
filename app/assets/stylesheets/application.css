@@ -122,8 +122,16 @@ a:active {
     font-family: "Montserrat-Medium"
 }
 
+.navbar-custom {
+    background-color: #fdf7f0;
+}
+
 .no_picture_logo {
     font-family: "Montserrat-Bold";
+}
+
+.app_name {
+    color: black;
 }
 
 #sign_up_link {
@@ -164,7 +172,4 @@ footer {
 
 #copyright {
     font-size: smaller;
-}
-
-.contact {
 }
