@@ -15,13 +15,13 @@
       </div>
     </div>
   <% end %>
-  <div class="row form_padding">
+  <div class="row">
     <div class="col-6">
       <picture>
         <img src="login.svg" class="img-fluid" alt="illustration of man opening door">
       </picture>
     </div>
-    <div class="col-5">
+    <div class="col-5 login_form_padding">
       <div class="row text-left">
         <ul class="list-inline">
           <li class="list-inline-item h4">Login</li>
@@ -32,19 +32,22 @@
         <div class="container-fluid px-3">
           <div class="row d-inline-flex">
             <!-- <div class="col"> -->
-              <div class="alert alert-warning py-1" id="incorrect_credentials" role="alert">
-                <%= flash[:message] %>
-              </div>
+            <div class="alert alert-warning py-1" id="incorrect_credentials" role="alert">
+              <%= flash[:message] %>
+            </div>
             <!-- </div> -->
           </div>
         </div>
       <% end %>
-      <%= form_tag login_path do %>
-        <p><%= text_field_tag :email, nil, placeholder: "Email" %></p>
-        <p><%= password_field_tag :password, nil, placeholder: "Password" %></p>
-        <p><%= submit_tag "Log In" %></p>
-      <% end %>
-      <%= render "application/omniauth" %>
+      <div class="form-group">
+        <%= form_tag login_path do %>
+          <p><%= text_field_tag :email, nil, placeholder: "Email" %></p>
+          <p><%= password_field_tag :password, nil, placeholder: "Password" %></p>
+          <p><%= submit_tag "Log In" %></p>
+        <% end %>
+        <%= render "application/omniauth" %>
+      </div>
+      </div>
     </div>
   </div>
 </div>

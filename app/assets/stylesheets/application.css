@@ -238,8 +238,12 @@ h1.homepage_text {
     margin-top: 100px;
 }
 
-.form_padding {
+.signup_form_padding {
     padding-left: 250px;   
+}
+
+.login_form_padding {
+    padding-top: 60px;
 }
 
 .alt_button {
