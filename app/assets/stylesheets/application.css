@@ -137,6 +137,10 @@ a:active {
     text-decoration: none;
 }
 
+.custom_link {
+    color: #F4845F !important;
+}
+
 .custom_link:hover {
     color: #F7B267 !important;
 }
