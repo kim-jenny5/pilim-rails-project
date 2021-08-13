@@ -6,26 +6,29 @@
 
     <div class="form-group">
         <%= form_for :user do |f| %>
-
             <div class="row mb-3 first_last_name">
-                <div class="col">
+                <div class="col-6">
                     <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
                 </div>
-                <div class="col">
+                <div class="col-6">
                     <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
                 </div>
+                <div class="col-8 mt-3">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+                    </div>
+                </div>
+                <div class="col-7 mt-3">
+                    <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+                </div>
+                <div class="col-7 mt-3">
+                    <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+                </div>
+                <div class="col-12">
+                    <%= f.submit "Sign Up", class: "btn btn-custom" %>
+                </div>
             </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
-            </div>
-            
-            
-            <p><%= f.text_field :email, placeholder: "Email" %></p>
-            <p><%= f.password_field :password, placeholder: "Password" %></p>
-
-            <p><%= f.submit "Sign Up" %></p>
         <% end %>
 
         <%= render "application/omniauth" %>

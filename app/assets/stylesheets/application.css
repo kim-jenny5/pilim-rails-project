@@ -214,3 +214,7 @@ h1.homepage_text {
 .first_last_name {
     width: 150%
 }
+
+.btn-custom {
+   background-color: #F7B267 !important;
+}
