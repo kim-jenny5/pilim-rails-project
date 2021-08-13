@@ -1,26 +1,32 @@
-<h1>Create an account</h1>
-or <%= link_to "log in", login_path %>
-<br><br>
+    <h1>Create an account</h1>
+    or <%= link_to "log in", login_path %>
+    <br><br>
 
-<%= render partial: "application/error_messages", locals: { term: @user } %>
+    <%= render partial: "application/error_messages", locals: { term: @user } %>
 
-<div class="form-group">
-    <%= form_for :user do |f| %>
-        <p><%= f.text_field :first_name, placeholder: "First Name" %></p>
-        <p><%= f.text_field :last_name, placeholder: "Last Name" %></p>
+    <div class="form-group">
+        <%= form_for :user do |f| %>
 
+            <div class="row mb-3 first_last_name">
+                <div class="col">
+                    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+                </div>
+                <div class="col">
+                    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+                </div>
+            </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">@</span>
-            <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
-        </div>
-        
-        
-        <p><%= f.text_field :email, placeholder: "Email" %></p>
-        <p><%= f.password_field :password, placeholder: "Password" %></p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+            </div>
+            
+            
+            <p><%= f.text_field :email, placeholder: "Email" %></p>
+            <p><%= f.password_field :password, placeholder: "Password" %></p>
 
-        <p><%= f.submit "Sign Up" %></p>
-    <% end %>
+            <p><%= f.submit "Sign Up" %></p>
+        <% end %>
 
-    <%= render "application/omniauth" %>
- </div>
+        <%= render "application/omniauth" %>
+    </div>
