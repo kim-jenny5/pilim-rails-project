@@ -1,9 +1,9 @@
 <div class="container my-auto form_container">
   <div class="row">
-    <h3 class="page_title">Write a New Review</h3>
-  </div>
-  <div class="row">
-    <h4><%= @movie.title %></h4>
+    <div class="d-flex flex-row">
+      <h3 class="page_title">Write a New Review</h3>
+      <h5 class="movie_title_padding_review">for <%= @movie.title %></h5>
+    </div>
   </div>
   <%= form_for [@movie, @review] do |f| %>
     <div class="form-group mx-auto">

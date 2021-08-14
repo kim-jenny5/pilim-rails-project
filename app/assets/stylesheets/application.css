@@ -168,7 +168,7 @@ a:active {
 }
 
 .form_container {
-    
+    max-width: 600px !important;
 }
 
 /* HEADER & FOOTER --------------------------------------------- */
@@ -372,10 +372,15 @@ h1.homepage_text {
     padding-left: 0 !important;   
 }
 
-.user_link {
-
-}
-
 .user_link:hover {
     color: #F25C54 !important;
 }
+
+.movie_title_padding_review {
+    padding: 6px 0 0 7px;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
