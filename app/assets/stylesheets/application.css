@@ -291,7 +291,24 @@ h1.homepage_text {
 
 /* USER DASHBOARD (SHOW PAGE) --------------------------------------------- */
 
+/* .card_width {
+    width: 75%;
+} */
+
 .someones_list {
     font-family: "Montserrat-LightItalic";
+    font-size: 18px;
+}
+
+.profile_links {
+    color: #F4845F !important;
+}
+
+.profile_links:hover {
+    color: #F7B267 !important;
+}
+
+.joined_date {
+    font-family: "Montserrat-Light";
     font-size: 18px;
 }

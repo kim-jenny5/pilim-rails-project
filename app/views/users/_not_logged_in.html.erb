@@ -1,20 +1,20 @@
-<div class="container-fluid float-start my-5 mx-auto">
+<div class="container-fluid float-start my-5">
   <div class="row">
     <div class="col-3 text-end">
-      <h2>@<%= @user.username %></h2>
-      <h5>Joined: <%= @user.joined %></h5>
+      <h3>@<%= @user.username %></h3>
+      <span class="joined_date">Joined: <%= @user.joined %></span>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <%= link_to "#{@user.username}'s Reviews", user_reviews_path(@user), {class: "nav-link d-inline-flex"} %>
+          <%= link_to "#{@user.username}'s Reviews", user_reviews_path(@user), {class: "profile_links"} %>
         </li>
       </ul>
     </div>
-    <div class="col-7 mt-4">
+    <div class="col-8 mt-4">
       <span class="someones_list"><%= @user.username %>'s Lists 📝</span>
-      <div class="row row-cols-1 row-cols-3 g-4">
+      <div class="row row-cols-1 row-cols-3 g-4" style="max-width: 60rem;">
         <% @user.lists.each do |list| %>
           <div class="col d-flex justify-content-center">
-            <div class="card h-100 card_width">
+            <div class="card h-100">
               <div class="card-body">
                 <h5 class="card-title"><%= link_to list.title, list_path(list), {class: "custom_link"} %></h5>
                 <p class="card-text"><%= list.description %></p>
