@@ -1,5 +1,18 @@
-<h1>Write a New Review</h1>
-<h2><%= @movie.title %></h2>
-<%= form_for [@movie, @review] do |f| %>
-    <%= render partial: "form", locals: {f: f} %>
-<% end %>
+<div class="container my-auto form_container">
+  <div class="row">
+    <h3 class="page_title">Write a New Review</h3>
+  </div>
+  <div class="row">
+    <h4><%= @movie.title %></h4>
+  </div>
+  <%= form_for [@movie, @review] do |f| %>
+    <div class="form-group mx-auto">
+      <%= render partial: "form", locals: {f: f} %>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.submit "Submit", class: "btn btn-custom" %>
+      </div>
+    </div>
+  <% end %>
+</div>

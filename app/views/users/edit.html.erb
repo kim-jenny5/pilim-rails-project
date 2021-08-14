@@ -1,12 +1,12 @@
 <div class="container my-auto" id="edit_profile_container">
   <div class="row mb-3">
     <div class="d-flex justify-content-center">
-      <h2>Edit your profile ✍🏻</h2>
+      <h2 class="page_title">Edit your profile ✍🏻</h2>
     </div>
   </div>
-  <div class="form-group mx-auto">
-    <%= render partial: "application/error_messages", locals: { term: @user } %>
-    <%= form_for @user do |f| %>
+  <%= render partial: "application/error_messages", locals: { term: @user } %>
+  <%= form_for @user do |f| %>
+    <div class="form-group mx-auto">
       <div class="row">
         <div class="row">
           <div class="col first_last_name">
@@ -30,6 +30,6 @@
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

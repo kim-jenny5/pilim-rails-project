@@ -1,6 +1,14 @@
-<%= f.text_field :title, placeholder: "Title" %><br><br>
-<%= f.label :rating %> (1-5)<br>
-<%= f.number_field :rating, {min: 1, max: 5} %><br><br>
-<%= f.label :comment %><br>
-<%= f.text_area :comment %>
-<p><%= f.submit %></p>
+<div class="row">
+  <div class="col">
+    <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+    <br>
+  </div>
+  <div class="col">
+    <%= f.label :rating, class: "form-label" %> (1-5)
+    <%= f.number_field :rating, {class: "form-control", min: 1, max: 5} %>
+  </div>
+</div>
+<div class="row">
+  <%= f.label :comment, class: "form-label" %>
+  <%= f.text_area :comment, class: "form-control" %>
+</div>

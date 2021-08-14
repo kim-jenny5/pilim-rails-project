@@ -162,6 +162,15 @@ a:active {
     font-size: 14px;
 }
 
+.page_title {
+    color: #F27059;
+    font-family: "Montserrat-Bold";
+}
+
+.form_container {
+    
+}
+
 /* HEADER & FOOTER --------------------------------------------- */
 
 .navbar-custom {
@@ -182,7 +191,8 @@ a:active {
 }
 
 .app_name {
-    color: #6c757d;
+    /* color: #6c757d; */
+    color: black;
 }
 
 #signup_link {
@@ -330,11 +340,6 @@ h1.homepage_text {
 
 .review_container {
     max-width: 1000px !important;
-}
-
-.reviews_by {
-    color: #F27059;
-    font-family: "Montserrat-Bold";
 }
 
 .edit_button {
