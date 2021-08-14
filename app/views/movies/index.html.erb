@@ -1,19 +1,25 @@
-<div class="container my-auto">
+<div class="container">
   <div class="row">
     <div class="col">
-      <div class="d-flex flex-row">
-        <div class="genre_padding">Filter by Genre</div>
-        <%= form_with url: movies_path, method: :get do |form| %>
-          <!-- <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre, class: "genre_radio_btns" %> -->
-          <%= form.collection_select :genre_name, @movie_genres, :genre, :genre %>
-          <%= form.submit "Filter", name: nil %>
-        <% end %>
-      </div>
+      <!-- <div class="genre_padding">Filter by Genre</div> -->
+      <%= form_with url: movies_path, method: :get do |form| %>
+        <div class="form-group">
+          <div class="d-flex flex-row">
+            <!-- <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre, class: "genre_radio_btns" %> -->
+            <%= form.collection_select :genre_name, @movie_genres, :genre, :genre, {prompt: "Select genre"}, {class: "form-select genre_select"} %>
+            <%= form.submit "Filter", name: nil, class: "btn movie_btn" %>
+          </div>
+        </div>
+      <% end %>
     </div>
     <div class="col">
       <%= form_tag movies_path, method: :get do %>
-        <%= search_field_tag :search, nil, placeholder: "Search by title" %>
-        <%= submit_tag "Search", name: nil %>
+        <div class="form-group">
+          <div class="d-flex flex-row">
+            <%= search_field_tag :search, nil, placeholder: "Search by title", class: "form-control movie_search" %>
+            <%= submit_tag "Search", name: nil, class: "btn movie_btn" %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
