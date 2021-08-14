@@ -291,10 +291,6 @@ h1.homepage_text {
 
 /* USER DASHBOARD (SHOW PAGE) --------------------------------------------- */
 
-/* .card_width {
-    width: 75%;
-} */
-
 .someones_list {
     font-family: "Montserrat-LightItalic";
     font-size: 18px;
@@ -315,4 +311,25 @@ h1.homepage_text {
 
 #edit_profile_container {
     width: 500px;
+}
+
+/* REVIEWS --------------------------------------------- */
+
+/* .edit_delete_buttons {
+    width: max-content;
+} */
+
+.review_container {
+    width: 500px;
+}
+
+.edit_button {
+    color: #F25C54 !important;
+    font-family: "Montserrat-Medium";
+    font-size: 14px !important;
+}
+
+.delete_button {
+    color: #F79D65 !important;
+    font-size: 13px !important;
 }

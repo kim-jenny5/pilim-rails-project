@@ -1,2 +1,6 @@
-<%= link_to "Edit", edit_review_path(review) %>
-<%= button_to "Delete", review_path(review), method: :delete %>
+<div class="row">
+  <div class="d-flex flex-row-reverse">
+    <%= button_to "Delete", review_path(review), method: :delete, class: "btn p-2 delete_button" %>
+    <%= link_to "Edit", edit_review_path(review), class: "p-2 edit_button" %>
+  </div>
+</div>
