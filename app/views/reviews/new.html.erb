@@ -1,6 +1,6 @@
 <div class="container my-auto form_container">
   <div class="row">
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-ro nopadding">
       <h3 class="page_title">Write a New Review</h3>
       <h5 class="movie_title_padding_review">for <%= @movie.title %></h5>
     </div>
@@ -10,8 +10,8 @@
       <%= render partial: "form", locals: {f: f} %>
     </div>
     <div class="row">
-      <div class="col">
-        <%= f.submit "Submit", class: "btn btn-custom" %>
+      <div class="col nopadding">
+        <%= f.submit "Submit", class: "btn btn-custom mt-3" %>
       </div>
     </div>
   <% end %>

@@ -1,30 +1,15 @@
-<!-- <div class="row">
-  <div class="col-9">
-    <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
-  </div>
-  <div class="col-3">
-    <%= f.label :rating, class: "form-label" %> (1-5)
-    <%= f.number_field :rating, {placeholder: "Rating (1-5)", class: "form-control number_field", min: 1, max: 5} %>
-  </div>
-</div>
-<div class="row">
-  <%= f.label :comment, class: "form-label" %>
-  <%= f.text_area :comment, class: "form-control" %>
-</div> -->
-<div class="row">
+<div class="row mt-2 mb-4">
   <div class="col nopadding">
     <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
   </div>
   <div class="col-2 nopadding text-end">
-    <!-- <div class="d-flex flex-row star_row_padding"> -->
     <%= f.label "Rating (1-5)", class: "form-label pt-2" %>
   </div>
   <div class="col-2 rating_field">
     <%= f.number_field :rating, {class: "form-control", min: 1, max: 5} %>
   </div>
 </div>
-</div>
 <div class="row">
-  <%= f.label :comment, class: "form-label" %>
-  <%= f.text_area :comment, class: "form-control" %>
+  <%= f.label :comment, class: "form-label nopadding" %>
+  <%= f.text_area :comment, rows: 6, class: "form-control" %>
 </div>

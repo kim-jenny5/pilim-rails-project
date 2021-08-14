@@ -168,7 +168,7 @@ a:active {
 }
 
 .form_container {
-    max-width: 600px !important;
+    max-width: 700px !important;
 }
 
 /* HEADER & FOOTER --------------------------------------------- */
@@ -291,6 +291,7 @@ h1.homepage_text {
    background-color: #F25C54 !important;
    font-family: "Montserrat-SemiBold";
    color: white !important;
+   border-radius: 18px !important;
 }
 
 .btn-google {
