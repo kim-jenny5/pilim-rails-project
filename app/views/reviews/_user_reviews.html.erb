@@ -1,9 +1,9 @@
-<div class="row text-center mb-3">
+<div class="row text-center">
   <h2 class="reviews_by">Reviews by</h2>
   <h5><%= link_to "@#{@user.username}", user_path(@user), class: "text-muted user_link" %></h5>
 </div>
 <% @reviews.each do |review| %>
-  <div class="row">
+  <div class="row mt-4">
     <div class="row">
       <div class="col movie_review_title">
         <%= link_to review.movie.title, movie_path(review.movie), class: "custom_link" %>
