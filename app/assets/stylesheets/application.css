@@ -387,9 +387,6 @@ h1.homepage_text {
  }
 
  /* REVIEWS --------------------------------------------- */
-.genre_select {
-    width: max-content !important;
-}
 
 .movie_btn {
     background-color: #F25C54 !important;
@@ -400,9 +397,5 @@ h1.homepage_text {
 }
 
 #movie_search_padding {
-    margin-right: 100px !important;    
-}
-
-#genre_filter_padding {
-
+    /* padding-left: 50px; */
 }

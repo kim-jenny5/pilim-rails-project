@@ -22,21 +22,20 @@
     </div>
   </div>
 </div> -->
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-    <div class="col" id="movie_search_padding">
+    <div class="col">
       <%= form_tag movies_path, method: :get do %>
-        <div class="input-group">
+        <div class="input-group w-75" id="movie_search_padding">
           <%= search_field_tag :search, nil, placeholder: "Search by title", class: "form-control" %>
           <%= submit_tag "Search", name: nil, class: "btn movie_btn" %>
         </div>
       <% end %>
     </div>
-    <div class="col" id="genre_filter_padding">
-      <!-- <div class="genre_padding">Filter by Genre</div> -->
+    <div class="col">
       <%= form_with url: movies_path, method: :get do |form| %>
-        <div class="input-group">
-          <%= form.collection_select :genre_name, @movie_genres, :genre, :genre, {prompt: "Select genre"}, {class: "form-select genre_select"} %>
+        <div class="input-group w-50">
+          <%= form.collection_select :genre_name, @movie_genres, :genre, :genre, {prompt: "Select genre"}, {class: "form-select"} %>
           <%= form.submit "Filter", name: nil, class: "btn movie_btn" %>
         </div>
       <% end %>
