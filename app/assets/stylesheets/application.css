@@ -385,3 +385,8 @@ h1.homepage_text {
     padding: 0 !important;
     margin: 0 !important;
  }
+
+ /* REVIEWS --------------------------------------------- */
+.genre_padding {
+    padding: 3px 10px 0 0;
+}

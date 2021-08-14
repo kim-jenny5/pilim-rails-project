@@ -1,23 +1,31 @@
-<p>Filter by Genre</p>
-<%= form_with url: movies_path, method: :get do |form| %>
-    <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre %>
-    <%= form.submit "Filter", name: nil %>
-<% end %>
-<br>
-
-<%= form_tag movies_path, method: :get do %>
-    <%= search_field_tag :search, nil, placeholder: "Search by title" %>
-    <%= submit_tag "Search", name: nil %>
-<% end %>
-
+<div class="container my-auto">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-row">
+        <div class="genre_padding">Filter by Genre</div>
+        <%= form_with url: movies_path, method: :get do |form| %>
+          <!-- <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre, class: "genre_radio_btns" %> -->
+          <%= form.collection_select :genre_name, @movie_genres, :genre, :genre %>
+          <%= form.submit "Filter", name: nil %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col">
+      <%= form_tag movies_path, method: :get do %>
+        <%= search_field_tag :search, nil, placeholder: "Search by title" %>
+        <%= submit_tag "Search", name: nil %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <% if flash[:message] %>
-    <%= render "application/flash_messages" %>
+  <%= render "application/flash_messages" %>
 <% end %>
-
 <% if params[:genre_name] || params[:search] %>
-    <br><%= render partial: "movie_results", locals: { term: @movies } %><br>
-    <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
+  <br>
+  <%= render partial: "movie_results", locals: { term: @movies } %><br>
+  <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
 <% else %>
-    <h2>Newest Releases</h2>
-    <%= render partial: "movie_results", locals: { term: @newest_movies } %>
+  <h2>Newest Releases</h2>
+  <%= render partial: "movie_results", locals: { term: @newest_movies } %>
 <% end %>
