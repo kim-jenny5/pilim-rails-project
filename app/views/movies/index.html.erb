@@ -1,24 +1,43 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
-    <div class="col">
-      <!-- <div class="genre_padding">Filter by Genre</div> -->
-      <%= form_with url: movies_path, method: :get do |form| %>
+    <div class="col" id="movie_search_padding">
+      <%= form_tag movies_path, method: :get do %>
         <div class="form-group">
           <div class="d-flex flex-row">
-            <!-- <%= form.collection_radio_buttons :genre_name, @movie_genres, :genre, :genre, class: "genre_radio_btns" %> -->
+            <%= search_field_tag :search, nil, placeholder: "Search by title", class: "form-control" %>
+            <%= submit_tag "Search", name: nil, class: "btn movie_btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col" id="genre_filter_padding">
+      <%= form_with url: movies_path, method: :get do |form| %>
+        <div class="form-group">
+          <div class="d-flex justify-content-start  ">
             <%= form.collection_select :genre_name, @movie_genres, :genre, :genre, {prompt: "Select genre"}, {class: "form-select genre_select"} %>
             <%= form.submit "Filter", name: nil, class: "btn movie_btn" %>
           </div>
         </div>
       <% end %>
     </div>
-    <div class="col">
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col" id="movie_search_padding">
       <%= form_tag movies_path, method: :get do %>
-        <div class="form-group">
-          <div class="d-flex flex-row">
-            <%= search_field_tag :search, nil, placeholder: "Search by title", class: "form-control movie_search" %>
-            <%= submit_tag "Search", name: nil, class: "btn movie_btn" %>
-          </div>
+        <div class="input-group">
+          <%= search_field_tag :search, nil, placeholder: "Search by title", class: "form-control" %>
+          <%= submit_tag "Search", name: nil, class: "btn movie_btn" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col" id="genre_filter_padding">
+      <!-- <div class="genre_padding">Filter by Genre</div> -->
+      <%= form_with url: movies_path, method: :get do |form| %>
+        <div class="input-group">
+          <%= form.collection_select :genre_name, @movie_genres, :genre, :genre, {prompt: "Select genre"}, {class: "form-select genre_select"} %>
+          <%= form.submit "Filter", name: nil, class: "btn movie_btn" %>
         </div>
       <% end %>
     </div>
