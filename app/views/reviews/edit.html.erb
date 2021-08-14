@@ -1,5 +1,18 @@
-<h1>Edit Your Review</h1>
-<h2><%= @review.movie.title %></h2>
-<%= form_for [@movie, @review] do |f| %>
-    <%= render partial: "form", locals: {f: f} %>
-<% end %>
+<div class="container my-auto form_container">
+  <div class="row">
+    <div class="d-flex flex-row nopadding">
+      <h3 class="page_title">Edit Your Review</h3>
+      <h5 class="movie_title_padding_review">for <%= @review.movie.title %></h5>
+    </div>
+  </div>
+  <%= form_for [@movie, @review] do |f| %>
+    <div class="form-group mx-auto">
+      <%= render partial: "form", locals: {f: f} %>
+    </div>
+    <div class="row">
+      <div class="col nopadding">
+        <%= f.submit "Save", class: "btn btn-custom mt-3" %>
+      </div>
+    </div>
+  <% end %>
+</div>
