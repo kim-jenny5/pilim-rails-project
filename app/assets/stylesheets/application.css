@@ -145,6 +145,10 @@ a:active {
     color: #F7B267 !important;
 }
 
+.card-text {
+    font-size: 14px;
+}
+
 /* HEADER & FOOTER --------------------------------------------- */
 
 .navbar-custom {
