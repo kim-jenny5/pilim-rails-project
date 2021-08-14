@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
     helper_method :current_user, :logged_in?, :require_login
 
     def home
@@ -22,5 +24,9 @@ class ApplicationController < ActionController::Base
             flash[:error] = "You must be logged in to access this page."
             redirect_to login_path
         end
+    end
+
+    def not_found
+        redirect_to error_path
     end
 end

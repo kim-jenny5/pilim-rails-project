@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #homepage
   root "application#home"
+  get "/error", to: "application#not_found"
 
   #signup
   get "/signup", to: "users#new"
