@@ -173,7 +173,7 @@ a:active {
 }
 
 .app_name {
-    color: black;
+    color: #6c757d;
 }
 
 #signup_link {
@@ -320,7 +320,12 @@ h1.homepage_text {
 /* REVIEWS --------------------------------------------- */
 
 .review_container {
-    width: 500px;
+    max-width: 1000px !important;
+}
+
+.reviews_by {
+    color: #F27059;
+    font-family: "Montserrat-Bold";
 }
 
 .edit_button {
@@ -336,6 +341,7 @@ h1.homepage_text {
 
 .movie_review_title {
     padding-left: 0 !important;
+    font-size: 15px;
 }
 
 .star_row_padding {
@@ -343,6 +349,19 @@ h1.homepage_text {
 }
 
 .star_sizing {
-    font-size: smaller;
-    padding: 1px 8px 0 0;
+    font-size: 14px;
+    padding: 1px 6px 0 0;
+}
+
+.review_comment {
+    font-size: 15px;
+    padding-left: 0 !important;   
+}
+
+.user_link {
+
+}
+
+.user_link:hover {
+    color: #F25C54 !important;
 }
