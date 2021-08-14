@@ -1,11 +1,35 @@
-<h1>Edit your profile</h1>
-
-<%= render partial: "application/error_messages", locals: { term: @user } %>
-
-<%= form_for @user do |f| %>
-    <p><%= f.text_field :first_name, placeholder: "First Name" %></p>
-    <p><%= f.text_field :last_name, placeholder: "Last Name" %></p>
-    <p><%= f.text_field :username, placeholder: "Username" %></p>
-
-    <p><%= f.submit "Edit" %></p>
-<% end %>
+<div class="container my-auto" id="edit_profile_container">
+  <div class="row mb-3">
+    <div class="d-flex justify-content-center">
+      <h2>Edit your profile ✍🏻</h2>
+    </div>
+  </div>
+  <div class="form-group mx-auto">
+    <%= render partial: "application/error_messages", locals: { term: @user } %>
+    <%= form_for @user do |f| %>
+      <div class="row">
+        <div class="row">
+          <div class="col first_last_name">
+            <p><%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %></p>
+          </div>
+          <div class="col first_last_name">
+            <p><%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mt-2">
+            <div class="input-group">
+              <span class="input-group-text" id="basic-addon1">@</span>
+              <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mt-3 d-flex justify-content-center">
+            <p><%= f.submit "Save", class: "btn btn-custom" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

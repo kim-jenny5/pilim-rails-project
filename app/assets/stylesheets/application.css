@@ -149,6 +149,10 @@ a:active {
     font-size: 14px;
 }
 
+.page_padding {
+    margin-top: 100px;
+}
+
 /* HEADER & FOOTER --------------------------------------------- */
 
 .navbar-custom {
@@ -242,10 +246,6 @@ h1.homepage_text {
 
 /* SIGNUP & LOGIN FORM --------------------------------------------- */
 
-.page_padding {
-    margin-top: 100px;
-}
-
 .signup_form_padding {
     padding-left: 250px;   
 }
@@ -311,4 +311,8 @@ h1.homepage_text {
 .joined_date {
     font-family: "Montserrat-Light";
     font-size: 18px;
+}
+
+#edit_profile_container {
+    width: 500px;
 }

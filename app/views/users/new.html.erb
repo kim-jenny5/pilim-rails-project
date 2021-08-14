@@ -8,8 +8,8 @@
     <div class="col-6">
       <div class="row text-left">
         <ul class="list-inline">
-            <li class="list-inline-item h4">Create an account</li>
-            <li class="list-inline-item">or <%= link_to "log in", login_path, class: "alt_button custom_link" %></li>
+          <li class="list-inline-item h4">Create an account</li>
+          <li class="list-inline-item">or <%= link_to "log in", login_path, class: "alt_button custom_link" %></li>
         </ul>
       </div>
       <div class="form-group mx-auto">
@@ -17,33 +17,33 @@
         <%= form_for :user do |f| %>
           <div class="row mb-3">
             <div class="row">
-                <div class="col first_last_name">
+              <div class="col first_last_name">
                 <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-                </div>
-                <div class="col first_last_name">
+              </div>
+              <div class="col first_last_name">
                 <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-                </div>
+              </div>
             </div>
             <div class="row">
-                <div class="col mt-3">
+              <div class="col mt-3">
                 <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                    <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+                  <span class="input-group-text" id="basic-addon1">@</span>
+                  <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
                 </div>
-                </div>
+              </div>
             </div>
             <div class="row">
-                <div class="col mt-3">
+              <div class="col mt-3">
                 <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
-                </div>
-                <div class="col mt-3">
+              </div>
+              <div class="col mt-3">
                 <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-                </div>
+              </div>
             </div>
             <div class="row">
-                <div class="col mt-3">
+              <div class="col mt-3">
                 <%= f.submit "Sign Up", class: "btn btn-custom" %>
-                </div>
+              </div>
             </div>
           </div>
         <% end %>
