@@ -1,16 +1,17 @@
 <div class="row">
-    <h2>Reviews by</h2>
-    <%= link_to @user.username, user_path(@user) %>
+  <h2>Reviews by</h2>
+  <%= link_to @user.username, user_path(@user) %>
 </div>
 <br>
 <% @reviews.each do |review| %>
+  <div class="row">
     <div class="row">
-    <%= link_to review.movie.title, movie_path(review.movie), class: "custom_link" %>
-    <%= render partial: "review_details", locals: {review: review} %>
-
-    <% if @user == current_user %>
-        <%= render partial: "edit_delete", locals: {review: review} %>
-    <% end %>
+      <%= link_to review.movie.title, movie_path(review.movie), class: "custom_link movie_review_title" %>
     </div>
+    <%= render partial: "review_details", locals: {review: review} %>
+    <% if @user == current_user %>
+      <%= render partial: "edit_delete", locals: {review: review} %>
+    <% end %>
+  </div>
 <% end %>
 </div>
