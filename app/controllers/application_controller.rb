@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    rescue_from NoMethodError, with: :not_found
 
     helper_method :current_user, :logged_in?, :require_login
 
