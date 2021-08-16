@@ -1,17 +1,23 @@
-<h1><%= @movie.title %></h1>
-Genre: <%= @movie.genre %><br>
-Released: <%= @movie.year %><br>
-Overall Rating: ⭐️ <%=  star_rating(@movie) %><br>
-
-<%= link_to "Add a Review", new_movie_review_path(@movie) %><br>
-
-<h2>Featured in these lists</h2>
-<ul>
+<div class="container">
+  <div class="row">
+    <h1 class="movie_page_title nopadding"><%= @movie.title %> (<%= @movie.year %>)</h1>
+  </div>
+  <div class="row movie_details">
+    Genre: <%= @movie.genre %>
+  </div>
+  <div class="row movie_details">
+    Overall Rating: ⭐️ <%= star_rating(@movie) %>
+  </div>
+  <div class="row">
+    <%= link_to "Add a Review", new_movie_review_path(@movie), class: "custom_link add_review_font" %>
+  </div> 
+  <h2>Featured in these lists</h2>
+  <ul>
     <% @movie.lists.each do |list| %>
-        <li><%= link_to list.title, list_path(list) %></li>
+      <li><%= link_to list.title, list_path(list) %></li>
     <% end %>
-</ul>
-
-<h2>Reviews</h2>
-<%= render "reviews/movie_reviews" %>
-<%= link_to "Click here to see more reviews", movie_reviews_path(@movie)%>
+  </ul>
+  <h2>Reviews</h2>
+  <%= render "reviews/movie_reviews" %>
+  <%= link_to "Click here to see more reviews", movie_reviews_path(@movie)%>
+</div>

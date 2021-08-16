@@ -257,6 +257,11 @@ h1.homepage_text {
     color: #F27059;
 }
 
+.card-link:hover {
+    color: #F7B267 !important;
+}
+
+
 .homepage_img {
     float: right;
     line-height: 0;
@@ -318,14 +323,6 @@ h1.homepage_text {
 .someones_list {
     font-family: "Montserrat-LightItalic";
     font-size: 18px;
-}
-
-.profile_links {
-    color: #F4845F !important;
-}
-
-.profile_links:hover {
-    color: #F7B267 !important;
 }
 
 .joined_date {
@@ -410,4 +407,17 @@ h1.homepage_text {
 .year_field {
     width: 20% !important;
     margin-left: 5px !important;
+}
+
+.movie_page_title {
+    color: #F27059;
+    font-family: "Montserrat-ExtraBold";
+}
+
+.movie_details {
+    font-family: "Montserrat-Medium";
+    font-size: 18px;
+}
+
+.add_review_font {
 }

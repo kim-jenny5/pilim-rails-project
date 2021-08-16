@@ -5,7 +5,7 @@
       <span class="joined_date">Joined: <%= @user.joined %></span>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <%= link_to "#{@user.username}'s Reviews", user_reviews_path(@user), {class: "profile_links"} %>
+          <%= link_to "#{@user.username}'s Reviews", user_reviews_path(@user), {class: "custom_link"} %>
         </li>
       </ul>
     </div>
