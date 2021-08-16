@@ -20,7 +20,6 @@
     </div>
     <div class="row">
       <div class="container flash_msg_container">
-        <!-- <div class="col d-flex justify-content-center"> -->
           <% if flash[:message] %>
             <%= render "application/flash_messages" %>
           <% end %>
@@ -30,13 +29,14 @@
   <div class="container">
     <div class="row mb-5">
       <% if params[:genre_name] || params[:search] %>
-        <br>
-        <%= render partial: "movie_results", locals: { term: @movies } %><br>
-        <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
+        <br><%= render partial: "movie_results", locals: { term: @movies } %><br>
       <% else %>
         <h3 class="page_title">Newest Releases</h3>
         <%= render partial: "movie_results", locals: { term: @newest_movies } %>
       <% end %>
+    </div>
+    <div class="row mt-3">
+      <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path, {class: "custom_link"} %></small>
     </div>
   </div>
 </div>
