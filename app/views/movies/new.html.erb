@@ -1,12 +1,26 @@
-<h1>Add a New Movie</h1>
-<p><small>⚠️ You won't be able to edit it later, so make sure all the information is correct! ⚠️</small></p>
-
-<%= render partial: "application/error_messages", locals: { term: @movie } %>
-
-<%= form_for @movie do |f| %>
-  <p><%= f.text_field :title, placeholder: "Title" %></p>
-  <p><%= f.collection_select :genre, @movie_genres, :genre, :genre, {prompt: "Choose the genre"} %></p>
-  <!-- <p><%= f.text_field :genre, placeholder: "Don't see the genre? Add it here!" %></p> -->
-  <p><%= f.text_field :year, placeholder: "Year" %></p>
-  <%= f.submit "Add" %>
-<% end %>
+<div class="container my-auto form_container">
+  <div class="row">
+    <h3 class="page_title">Add a New Movie</h3>
+  </div>
+  <div class="row mb-3">
+    <small>⚠️ You won't be able to edit it later, so make sure all the information is correct! ⚠️</small>
+  </div>
+  <!-- <div class="container w-75 float-start pl-0"> -->
+  <div class="container nopadding">
+    <%= render partial: "application/error_messages", locals: { term: @movie } %>
+    <%= form_for @movie do |f| %>
+      <div class="form-group mx-auto">
+        <div class="row">
+          <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+        </div>
+        <div class="row">
+          <%= f.collection_select :genre, @movie_genres, :genre, :genre, {prompt: "Choose the genre"}, {class: "form-select"} %>
+        </div>
+        <div class="row">
+          <%= f.text_field :year, placeholder: "Year", class: "form-control" %>
+        </div>
+        <%= f.submit "Add" %>
+      </div>
+    <% end %>
+  </div>
+</div>
