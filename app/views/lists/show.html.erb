@@ -12,10 +12,10 @@
   </div>
   <% if @list.user == current_user %>
     <div class="row">
-      <div class="d-flex flex-row-reverse align-items-center">
-      <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>
-      <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
-    </div>
+      <div class="d-flex flex-row align-items-center">
+        <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
+        <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>
+      </div>
     </div>
     <div class="row">
       <%= form_tag list_path(@list), method: :get do %>
