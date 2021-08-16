@@ -5,21 +5,34 @@
   <div class="row mb-3">
     <small>⚠️ You won't be able to edit it later, so make sure all the information is correct! ⚠️</small>
   </div>
-  <!-- <div class="container w-75 float-start pl-0"> -->
-  <div class="container nopadding">
-    <%= render partial: "application/error_messages", locals: { term: @movie } %>
+  <div class="container">
+    <div class="row">
+    <div class="col nopadding">
+      <%= render partial: "application/error_messages", locals: { term: @movie } %>
+    </div>
+    </div>
     <%= form_for @movie do |f| %>
       <div class="form-group mx-auto">
-        <div class="row">
+        <div class="row mb-3 w-75">
+        <div class="col nopadding">
           <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
         </div>
-        <div class="row">
-          <%= f.collection_select :genre, @movie_genres, :genre, :genre, {prompt: "Choose the genre"}, {class: "form-select"} %>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4 nopadding">
+            <%= f.collection_select :genre, @movie_genres, :genre, :genre, {prompt: "Select genre"}, {class: "form-select text-muted"} %>
+          </div>
+          <div class="col">
+            <div class="row year_field">
+              <%= f.text_field :year, placeholder: "Year", class: "form-control" %>
+            </div>
+          </div>
         </div>
         <div class="row">
-          <%= f.text_field :year, placeholder: "Year", class: "form-control" %>
+          <div class="col nopadding">
+            <%= f.submit "Submit", class: "btn btn-custom" %>
+          </div>
         </div>
-        <%= f.submit "Add" %>
       </div>
     <% end %>
   </div>

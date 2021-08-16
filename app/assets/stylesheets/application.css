@@ -403,6 +403,7 @@ h1.homepage_text {
     width: max-content !important;
 }
 
-.movie_form_padding {
-    
+.year_field {
+    width: 20% !important;
+    margin-left: 5px !important;
 }
