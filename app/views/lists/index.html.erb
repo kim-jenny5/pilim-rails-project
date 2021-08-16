@@ -1,12 +1,12 @@
 <div class="container-fluid mt-5">
   <div class="container">
-    <div class="row">
-      <h1>Browse through all lists</h1>
+    <div class="row mb-3">
+      <h1 class="page_title">Browse through all lists</h1>
     </div>
     <div class="row mb-4">
-      <div class="col d-flex justify-content-center">
+      <div class="col-6">
         <%= form_tag lists_path, method: :get do %>
-          <div class="input-group search_bar">
+          <div class="input-group">
             <%= search_field_tag :search, nil, placeholder: "Search for a list", class: "form-control" %>
             <%= submit_tag "Search", name: nil, class: "btn movie_list_btn" %>
           </div>
