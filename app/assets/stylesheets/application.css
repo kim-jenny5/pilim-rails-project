@@ -415,7 +415,6 @@ h1.homepage_text {
 }
 
 .movie_details {
-    /* font-family: "Montserrat-Light"; */
     font-size: 17px;
 }
 
@@ -431,3 +430,5 @@ h1.homepage_text {
     font-family: "Montserrat-MediumItalic";
     font-size: 14px;
 }
+
+ /* LISTS --------------------------------------------- */

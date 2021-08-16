@@ -10,7 +10,11 @@
     </div>
     <%= form_for @list do |f| %>
       <%= render partial: "form", locals: { f: f } %>
-      <p><%= f.submit "Create" %></p>
+      <div class="row">
+        <div class="col nopadding">
+          <%= f.submit "Submit", class: "btn btn-custom" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
