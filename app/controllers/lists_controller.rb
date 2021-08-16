@@ -5,7 +5,7 @@ class ListsController < ApplicationController
         if params[:search]
             @lists = List.list_search(params[:search])
             if @lists.blank?
-                flash[:message] = "Sorry. 😅 There's no such list."
+                flash[:message] = "Sorry. There's no such list."
                 redirect_to lists_path
             end
         else
@@ -32,7 +32,7 @@ class ListsController < ApplicationController
         
         if params[:search]
             @movies = Movie.movie_search(params[:search])
-            @movies.blank? ? flash[:message] = "'#{params[:search]}' not found." : flash[:message] = nil
+            @movies.blank? ? flash[:message] = "'#{params[:search]}' is not found." : flash[:message] = nil
             render :show
         end
     end
