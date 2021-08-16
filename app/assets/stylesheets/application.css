@@ -432,3 +432,19 @@ h1.homepage_text {
 }
 
  /* LISTS --------------------------------------------- */
+
+ .list_edit_btn {
+    background-color: #F25C54 !important;
+    font-family: "Montserrat-SemiBold";
+    color: white !important;
+    border-radius: 18px !important;
+    margin-right: 5px !important;
+    padding: 0 15px 0 15px !important;
+    font-size: 15px !important;
+ }
+
+ .list_delete_btn {
+    color: #F79D65 !important;
+    font-family: "Montserrat-Medium";
+    font-size: 15px !important;
+ }

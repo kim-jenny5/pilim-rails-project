@@ -1,36 +1,47 @@
-<h1><%= @list.title %></h1>
-<p><%= @list.description %></p>
-<p>Creator: @<%= link_to @list.user.username, user_path(@list.user) %></p>
-
-<% if @list.user == current_user %>
-    <%= link_to "Edit", edit_list_path(@list) %> 
-    <%= button_to "Delete", list_path(@list), method: :delete %>
-    <br>
-
-    <%= form_tag list_path(@list), method: :get do %>
+<div class="container my-5">
+  <div class="row">
+    <h1 class="page_title"><%= @list.title %></h1>
+  </div>
+  <div class="row list_details">
+    <%= @list.description %>
+  </div>
+  <div class="row list_details">
+    <div class="col">
+      Creator: @<%= link_to @list.user.username, user_path(@list.user), class: "custom_link" %>
+    </div>
+  </div>
+  <% if @list.user == current_user %>
+    <div class="row">
+      <div class="d-flex flex-row-reverse align-items-center">
+      <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>
+      <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
+    </div>
+    </div>
+    <div class="row">
+      <%= form_tag list_path(@list), method: :get do %>
         <%= search_field_tag :search, nil, placeholder: "Search for a movie to add to list" %>
         <%= submit_tag "Search", name: nil %>
-    <% end %>
-    <br>
-
+      <% end %>
+    </div>
     <% if params[:search] %>
-        <% @movies.each do |movie| %>
-            <%= movie.title %> (<%= movie.year %>)<br>
-            <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id)  %><br>
-        <% end %>
-        <% if flash[:message] %>
-            <%= render "application/flash_messages" %>
-        <% else %>
-            <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br><br>
-        <% end %>
+      <% @movies.each do |movie| %>
+        <%= movie.title %> (<%= movie.year %>)<br>
+        <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id)  %><br>
+      <% end %>
+      <% if flash[:message] %>
+        <%= render "application/flash_messages" %>
+      <% else %>
+        <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
+        <br>
+      <% end %>
     <% end %>
-<% end %>
-
-<ul>
+  <% end %>
+  <ul>
     <% @list.movies.each do |movie| %>
-        <li><%= link_to movie.title, movie_path(movie) %></li>
-        <% if @list.user == current_user %>
-            <%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete %>
-        <% end %>
+      <li><%= link_to movie.title, movie_path(movie) %></li>
+      <% if @list.user == current_user %>
+        <%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete %>
+      <% end %>
     <% end %>
-</ul>
+  </ul>
+</div>
