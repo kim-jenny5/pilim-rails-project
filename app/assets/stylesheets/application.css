@@ -337,6 +337,10 @@ h1.homepage_text {
     width: 500px;
 }
 
+.edit_name_field {
+    width: 50% !important;
+}
+
 /* REVIEWS --------------------------------------------- */
 
 .review_container {

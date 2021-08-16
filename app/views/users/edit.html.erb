@@ -8,26 +8,30 @@
   <%= form_for @user do |f| %>
     <div class="form-group mx-auto">
       <div class="row">
-        <div class="row">
-          <div class="col first_last_name">
-            <p><%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %></p>
-          </div>
-          <div class="col first_last_name">
-            <p><%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %></p>
-          </div>
+        <div class="col first_last_name">
+          <p><%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %></p>
         </div>
-        <div class="row">
-          <div class="col mt-2">
-            <div class="input-group">
-              <span class="input-group-text" id="basic-addon1">@</span>
-              <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+        <div class="col first_last_name">
+          <p><%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %></p>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col">
+          <div class="input-group">
+            <div class="col-1 d-flex justify-content-center">
+              <span class="input-group-text">@</span>
+            </div>
+            <div class="col">
+              <!-- <div class="row nopadding"> -->
+                <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+              <!-- </div> -->
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col mt-3 d-flex justify-content-center">
-            <p><%= f.submit "Save", class: "btn btn-custom" %></p>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col mt-3 d-flex justify-content-center">
+          <p><%= f.submit "Save", class: "btn btn-custom" %></p>
         </div>
       </div>
     </div>
