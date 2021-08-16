@@ -398,3 +398,7 @@ h1.homepage_text {
 .search_bar {
     width: 150% !important;
 }
+
+.flash_msg_container {
+    width: max-content !important;
+}

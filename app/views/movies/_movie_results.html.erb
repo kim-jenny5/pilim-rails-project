@@ -1,9 +1,9 @@
-<div class="row row-cols-1 row-cols-md-4 g-4 mt-0">
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-0">
 <% term.each do |movie| %>
     <div class="col">
     <div class="card h-100">
       <div class="card-body">
-        <h5 class="card-title"><%= link_to "#{movie.title} (#{movie.year})", movie_path(movie) %></h5>
+        <h5 class="card-title"><%= link_to "#{movie.title} (#{movie.year})", movie_path(movie), {class: "custom_link"} %></h5>
         <p class="card-text"><%= movie.genre %></p>
       </div>
     </div>
