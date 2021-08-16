@@ -2,26 +2,28 @@
   <div class="row">
     <h1 class="movie_page_title"><%= @movie.title %> (<%= @movie.year %>)</h1>
   </div>
-  <div class="row movie_details">
+  <div class="row movie_details nopadding">
     Genre: <%= @movie.genre %>
   </div>
-  <div class="row movie_details">
+  <div class="row movie_details nopadding">
     Overall Rating: ⭐️ <%= star_rating(@movie) %>
   </div>
-  <div class="row">
-    <%= link_to "Add a Review", new_movie_review_path(@movie), class: "custom_link add_review_font" %>
+  <div class="row mt-2">
+    <div class="col">
+      <%= link_to "Add a Review", new_movie_review_path(@movie), class: "btn btn-custom add_review_font " %>
+    </div>
   </div>
   <div class="container">
-    <div class="row mt-4">
-      <h3 class="page_title">Featured in these lists</h3>
+    <div class="row mt-4 mb-3">
+      <h4 class="movie_subtitles nopadding">Featured in these lists</h4>
     </div>
-    <ul>
+    <ul class="nopadding">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <% @movie.lists.each do |list| %>
-          <div class="col">
+          <div class="col pl-0">
             <div class="card h-100">
               <div class="card-body">
-                <h5 class="card-title"><%= link_to list.title, list_path(list), {class: "custom_link fw-bold"} %></h5>
+                <h5 class="card-title"><%= link_to list.title, list_path(list), {class: "custom_link"} %></h5>
                 <p class="card-text text-muted"><%= list.description %></p>
               </div>
             </div>
@@ -31,12 +33,12 @@
     </ul>
   </div>
   <div class="container mt-5">
-    <div class="row text-center">
-      <h3 class="page_title">Reviews</h3>
+    <div class="row">
+      <h4 class="movie_subtitles nopadding mb-3">Reviews</h4>
     </div>
     <%= render "reviews/movie_reviews" %>
   </div>
   <div class="row">
-    <%= link_to "Click here to see more reviews", movie_reviews_path(@movie)%>
+    <%= link_to "Click here to see more reviews", movie_reviews_path(@movie), class: "custom_link more_reviews_link" %>
   </div>
 </div>
