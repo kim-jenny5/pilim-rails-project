@@ -1,7 +1,13 @@
 <% @reviews.each do |review| %>
-    <%= link_to review.user.username, user_path(review.user) %><br>
+  <div class="row mt-4">
+    <div class="row">
+      <div class="col movie_review_title">
+        <%= link_to review.user.username, user_path(review.user) %><br>
+      </div>
+    </div>
     <%= render partial: "reviews/review_details", locals: {review: review} %>
     <% if review.user == current_user %>
-        <%= render partial: "reviews/edit_delete", locals: {review: review} %>
-    <% end %><br>
+      <%= render partial: "reviews/edit_delete", locals: {review: review} %>
+    <% end %>
+  </div>
 <% end %>

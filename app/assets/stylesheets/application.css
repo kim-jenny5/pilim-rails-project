@@ -415,9 +415,11 @@ h1.homepage_text {
 }
 
 .movie_details {
-    font-family: "Montserrat-Medium";
+    /* font-family: "Montserrat-Medium"; */
     font-size: 18px;
 }
 
 .add_review_font {
+    font-family: "Montserrat-SemiBold";
+    font-size: 17px;
 }

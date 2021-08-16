@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container my-5">
   <div class="row">
-    <h1 class="movie_page_title nopadding"><%= @movie.title %> (<%= @movie.year %>)</h1>
+    <h1 class="movie_page_title"><%= @movie.title %> (<%= @movie.year %>)</h1>
   </div>
   <div class="row movie_details">
     Genre: <%= @movie.genre %>
@@ -10,14 +10,33 @@
   </div>
   <div class="row">
     <%= link_to "Add a Review", new_movie_review_path(@movie), class: "custom_link add_review_font" %>
-  </div> 
-  <h2>Featured in these lists</h2>
-  <ul>
-    <% @movie.lists.each do |list| %>
-      <li><%= link_to list.title, list_path(list) %></li>
-    <% end %>
-  </ul>
-  <h2>Reviews</h2>
-  <%= render "reviews/movie_reviews" %>
-  <%= link_to "Click here to see more reviews", movie_reviews_path(@movie)%>
+  </div>
+  <div class="container">
+    <div class="row mt-4">
+      <h3 class="page_title">Featured in these lists</h3>
+    </div>
+    <ul>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% @movie.lists.each do |list| %>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title"><%= link_to list.title, list_path(list), {class: "custom_link fw-bold"} %></h5>
+                <p class="card-text text-muted"><%= list.description %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+  <div class="container mt-5">
+    <div class="row text-center">
+      <h3 class="page_title">Reviews</h3>
+    </div>
+    <%= render "reviews/movie_reviews" %>
+  </div>
+  <div class="row">
+    <%= link_to "Click here to see more reviews", movie_reviews_path(@movie)%>
+  </div>
 </div>
