@@ -1,8 +1,16 @@
-<h1>Create a New List</h1>
-
-<%= render partial: "application/error_messages", locals: { term: @list } %>
-
-<%= form_for @list do |f| %>
-    <%= render partial: "form", locals: { f: f } %>
-    <p><%= f.submit "Create" %></p>
-<% end %>
+<div class="container my-auto form_container">
+  <div class="row">
+    <h3 class="page_title">Create a New List</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col nopadding">
+        <%= render partial: "application/error_messages", locals: { term: @list } %>
+      </div>
+    </div>
+    <%= form_for @list do |f| %>
+      <%= render partial: "form", locals: { f: f } %>
+      <p><%= f.submit "Create" %></p>
+    <% end %>
+  </div>
+</div>

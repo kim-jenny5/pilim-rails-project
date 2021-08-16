@@ -7,16 +7,16 @@
   </div>
   <div class="container">
     <div class="row">
-    <div class="col nopadding">
-      <%= render partial: "application/error_messages", locals: { term: @movie } %>
-    </div>
+      <div class="col nopadding">
+        <%= render partial: "application/error_messages", locals: { term: @movie } %>
+      </div>
     </div>
     <%= form_for @movie do |f| %>
       <div class="form-group mx-auto">
         <div class="row mb-3 w-75">
-        <div class="col nopadding">
-          <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
-        </div>
+          <div class="col nopadding">
+            <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+          </div>
         </div>
         <div class="row mb-3">
           <div class="col-4 nopadding">
