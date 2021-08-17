@@ -195,7 +195,6 @@ a:active {
 }
 
 .app_name {
-    /* color: #6c757d; */
     color: black;
 }
 
@@ -224,7 +223,6 @@ a:active {
 }
 
 footer {
-    /* position: absolute; */
     bottom: 0;
     width: 100%;
     background-color: #fdf7f0;
@@ -306,15 +304,12 @@ h1.homepage_text {
 .btn-google {
     background-color: #4285F4 !important;
     color: white !important;
-    /* font-family: "Montserrat-Light"; */
     font-size: smaller !important;
 }
 
 .btn-facebook {
     background-color: #4267B2 !important;
-
     color: white !important;
-    /* font-family: "Montserrat-Light"; */
     font-size: smaller !important;
 }
 

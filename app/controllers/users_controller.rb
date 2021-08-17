@@ -17,24 +17,18 @@ class UsersController < ApplicationController
     end
 
     def show
-        # @user = User.find_by_id(params[:id])
-        # byebug
         @user = User.friendly.find_by_username(params[:id])
     end 
 
     def edit
-        # @user = User.find_by_id(params[:id])
         @user = User.friendly.find_by_username(params[:id])
     end
 
     def update
-        # @user = User.find_by_id(params[:id])
         @user = User.friendly.find_by_username(params[:id])
 
         if @user.valid?
             if @user.update(user_params)
-                # redirect_to user_path(current_user.id)
-                # byebug
                 redirect_to user_path(@user)
             else
                 render :edit
