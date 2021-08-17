@@ -461,3 +461,7 @@ h1.homepage_text {
 .table_header {
     font-family: "Montserrat-MediumItalic";
 }
+
+.list_container {
+    max-width: 1000px !important;
+}
