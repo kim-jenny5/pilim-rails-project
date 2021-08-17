@@ -27,11 +27,11 @@
     </div>
   </div>
   <div class="container">
-    <div class="row mb-5">
+    <div class="row mb-5 mt-3">
       <% if params[:genre_name] || params[:search] %>
         <%= render partial: "movie_results", locals: { term: @movies } %>
       <% else %>
-        <h3 class="page_title">Newest Releases</h3>
+        <h2 class="black_page_title">Newest Releases</h2>
         <%= render partial: "movie_results", locals: { term: @newest_movies } %>
       <% end %>
     </div>
