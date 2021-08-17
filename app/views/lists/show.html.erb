@@ -2,16 +2,21 @@
   <div class="row">
     <h1 class="page_title"><%= @list.title %></h1>
   </div>
-  <div class="row list_details">
+  <div class="row list_details nopadding">
     <%= @list.description %>
   </div>
-  <div class="row list_details">
-    <div class="col">
-      Creator: @<%= link_to @list.user.username, user_path(@list.user), class: "custom_link" %>
+  <div class="row list_details mt-3">
+    <div class="d-flex flex-row align-items-center">
+        <span id="list_creator">Creator:</span>
+        <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
     </div>
+    
+    <!-- <div class="col">
+      Creator: <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
+    </div> -->
   </div>
   <% if @list.user == current_user %>
-    <div class="row">
+    <div class="row mt-3">
       <div class="d-flex flex-row align-items-center">
         <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
         <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>

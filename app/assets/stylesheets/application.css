@@ -448,3 +448,8 @@ h1.homepage_text {
     font-family: "Montserrat-Medium";
     font-size: 15px !important;
  }
+
+ #list_creator {
+     font-family: "Montserrat-Italic";
+     padding-right: 5px !important;
+ }
