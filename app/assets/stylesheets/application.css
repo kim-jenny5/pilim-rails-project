@@ -453,3 +453,11 @@ h1.homepage_text {
      font-family: "Montserrat-Italic";
      padding-right: 5px !important;
  }
+
+ #movie_list_search {
+    max-width: 25% !important;   
+ }
+
+.table_header {
+    font-family: "Montserrat-MediumItalic";
+}

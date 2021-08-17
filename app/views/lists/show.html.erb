@@ -7,25 +7,23 @@
   </div>
   <div class="row list_details mt-3">
     <div class="d-flex flex-row align-items-center">
-        <span id="list_creator">Creator:</span>
-        <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
+      <span id="list_creator">Creator:</span>
+      <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
     </div>
-    
-    <!-- <div class="col">
-      Creator: <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
-    </div> -->
   </div>
   <% if @list.user == current_user %>
-    <div class="row mt-3">
+    <div class="row mt-2">
       <div class="d-flex flex-row align-items-center">
         <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
         <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-4 mb-5">
       <%= form_tag list_path(@list), method: :get do %>
-        <%= search_field_tag :search, nil, placeholder: "Search for a movie to add to list" %>
-        <%= submit_tag "Search", name: nil %>
+        <div class="input-group">
+          <%= search_field_tag :search, nil, placeholder: "Search for a movie to add to list", id: "movie_list_search", class: "form-control" %>
+          <%= submit_tag "Search", name: nil, class: "btn movie_list_btn" %>
+        </div>
       <% end %>
     </div>
     <% if params[:search] %>
@@ -41,12 +39,30 @@
       <% end %>
     <% end %>
   <% end %>
-  <ul>
-    <% @list.movies.each do |movie| %>
-      <li><%= link_to movie.title, movie_path(movie) %></li>
-      <% if @list.user == current_user %>
-        <%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete %>
+  <div class="table-responsive text-nowrap">
+    <table class="table table-hover table-borderless w-75">
+      <thead>
+        <tr>
+          <th scope="col" class="table_header">TITLE</th>
+          <th scope="col" class="table_header">YEAR RELEASED</th>
+          <th scope="col" class="table_header">GENRE</th>
+          <% if @list.user == current_user %>
+            <th scope="col"></th>
+          <% end %>
+        </tr>
+      </thead>
+      <% @list.movies.each do |movie| %>
+        <tbody>
+          <tr>
+            <td><%= link_to movie.title, movie_path(movie), class: "custom_link" %></td>
+            <td><%= movie.year %></td>
+            <td><%= movie.genre %></td>
+            <% if @list.user == current_user %>
+              <td><%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete, class: "btn list_delete_btn" %></td>
+            <% end %>
+          </tr>
+        </tbody>
       <% end %>
-    <% end %>
-  </ul>
+    </table>
+  </div>
 </div>
