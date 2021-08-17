@@ -22,5 +22,5 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql git 
+  adapter: postgresql
   database: db/production.sqlite3
