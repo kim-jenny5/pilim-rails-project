@@ -1,4 +1,4 @@
-<div class="container-fluid float-start my-5">
+<!-- <div class="container float-start my-5">
   <div class="row">
     <div class="col-3 text-end">
       <h3 class="username_font">@<%= @user.username %></h3>
@@ -29,6 +29,43 @@
             </div>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container float-start my-5">
+  <div class="row">
+    <div class="col-3 text-end">
+      <h3 class="username_font">@<%= @user.username %></h3>
+      <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+      <span class="joined_date">Joined: <%= @user.joined %></span>
+      <ul class="nav flex-column">
+        <li class="nav-item mt-2">
+          <%= link_to "Edit Profile", edit_user_path(@user), {class: "custom_link"} %>
+        </li>
+        <li class="nav-item mt-2">
+          <%= link_to "Create a New List", new_list_path, {class: "custom_link"} %>
+        </li>
+        <li class="nav-item mt-2">
+          <%= link_to "My Reviews", user_reviews_path(@user), {class: "custom_link"} %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-8 mt-4">
+      <div class="container">
+        <span class="someones_list">My Lists 📝</span>
+        <div class="row row-cols-1 row-cols-3 g-4" style="max-width: 60rem;">
+          <% @user.lists.each do |list| %>
+            <div class="col d-flex justify-content-center">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title"><%= link_to list.title, list_path(list), {class: "custom_link"} %></h5>
+                  <p class="card-text"><%= list.description %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
