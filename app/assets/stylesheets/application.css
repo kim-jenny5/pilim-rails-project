@@ -465,3 +465,13 @@ h1.homepage_text {
 .list_container {
     max-width: 1000px !important;
 }
+
+.list_add_btn {
+    background-color: #F25C54 !important;
+    font-family: "Montserrat-SemiBold";
+    color: white !important;
+    border-radius: 18px !important;
+    margin-left: 5px !important;
+    padding: 0 12px 0 12px !important;
+    font-size: 15px !important;
+ }

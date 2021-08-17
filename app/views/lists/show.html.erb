@@ -28,26 +28,27 @@
     </div>
     <% if params[:search] %>
       <% @movies.each do |movie| %>
-        <div class="row">
-          <%= movie.title %> (<%= movie.year %>)<br>
-          <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id)  %><br>
+        <div class="row mt-3">
+          <div class="d-flex flex-row align-items-center">
+            <%= movie.title %> (<%= movie.year %>)
+            <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id), class: "btn list_add_btn" %>
+          </div>
         </div>
       <% end %>
-      <div class="row">
+      <div class="row mt-4">
         <div class="container flash_msg_container">
           <% if flash[:message] %>
             <%= render "application/flash_messages" %>
           <% else %>
-            <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
-          <% end %>
-        </div>
+          </div>
+          <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
+        <% end %>
       </div>
     <% end %>
   <% end %>
 </div>
-<div class="container list_container">
-  <!-- <div class="col d-flex justify-content-center"> -->
-  <div class="table-responsive text-nowrap mt-5">
+<div class="container list_container my-5">
+  <div class="table-responsive text-nowrap">
     <table class="table table-hover table-borderless">
       <thead>
         <tr>
@@ -73,5 +74,4 @@
       <% end %>
     </table>
   </div>
-  <!-- </div> -->
 </div>
