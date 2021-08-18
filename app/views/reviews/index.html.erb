@@ -2,7 +2,7 @@
   <% if @user %>
     <%= render "user_reviews" %>
   <% elsif @movie %>
-    <h1>All Reviews for <%= link_to @movie.title, movie_path(@movie) %></h1>
+    <!-- <h1>All Reviews for <%= link_to @movie.title, movie_path(@movie) %></h1> -->
     <%= render "movie_reviews" %>
   <% end %>
 </div>
