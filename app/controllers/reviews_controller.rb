@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     before_action :require_login, except: :index
+    before_action :find_review, only: [:edit, :update, :destroy]
 
     def index
         if params[:user_id]
@@ -26,11 +27,11 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-        @review = Review.find_by_id(params[:id])
+        # @review = Review.find_by_id(params[:id])
     end
 
     def update
-        @review = Review.find_by_id(params[:id])
+        # @review = Review.find_by_id(params[:id])
 
         if @review.valid?
             @review.update(review_params)
@@ -39,7 +40,7 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        @review = Review.find_by_id(params[:id])
+        # @review = Review.find_by_id(params[:id])
         @review.destroy
         redirect_to movie_path(@review.movie)
     end
@@ -48,5 +49,16 @@ class ReviewsController < ApplicationController
     
     def review_params
         params.require(:review).permit(:title, :rating, :comment).merge(user_id: current_user.id)
+    end
+
+    def find_review
+        @review = Review.find_by_id(params[:id])
+    end
+
+    def not_authorized
+        if @review.user != current_user
+            flash[:message] = "Sorry. You are not authorized to access this page."
+            redirect_to user_path(current_user)
+        end
     end
 end

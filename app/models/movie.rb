@@ -9,6 +9,9 @@ class Movie < ApplicationRecord
     scope :distinct_alphabetized_genre, -> { order(:genre).select(:genre).distinct }
     scope :movie_search, -> (term) { where('title LIKE ?', "%#{term}%") }
     scope :filtered_by_genre, -> (genre) { where(genre: genre) }
+    scope :most_reviews, -> { joins(:reviews).group(:movie_id).order("count(reviews.id) desc") }
+
+    #get the movies with most reviews
 
     validates :title, :genre, presence: true
     validates :year, numericality: true

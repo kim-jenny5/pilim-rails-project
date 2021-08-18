@@ -1,5 +1,7 @@
 class ListsController < ApplicationController
     before_action :require_login, except: [:index, :show]
+    before_action :find_list, except: [:index, :new, :create]
+    before_action :not_authorized, only: [:edit, :update, :destroy]
 
     def index
         if params[:search]
@@ -28,8 +30,6 @@ class ListsController < ApplicationController
     end
 
     def show
-        @list = List.find_by_id(params[:id])
-        
         if params[:search]
             @movies = Movie.movie_search(params[:search])
             @movies.blank? ? flash[:message] = "'#{params[:search]}' is not found." : flash[:message] = nil
@@ -38,11 +38,9 @@ class ListsController < ApplicationController
     end
 
     def edit
-        @list = List.find_by_id(params[:id])
     end
 
     def update
-        @list = List.find_by_id(params[:id])
         if @list.valid?
             @list.update(list_params)
             redirect_to list_path(@list)
@@ -50,7 +48,6 @@ class ListsController < ApplicationController
     end
 
     def destroy
-        @list = List.find_by_id(params[:id])
         @list.destroy
         redirect_to user_path(@list.user)
     end
@@ -73,5 +70,16 @@ class ListsController < ApplicationController
 
     def list_params
         params.require(:list).permit(:title, :description).merge(user_id: current_user.id)
+    end
+
+    def find_list
+        @list = List.find_by_id(params[:id])
+    end
+
+    def not_authorized
+        if @list.user != current_user
+            flash[:message] = "Sorry. You are not authorized to access this page."
+            redirect_to list_path(@list)
+        end
     end
 end
