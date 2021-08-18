@@ -1,4 +1,9 @@
 <div class="container float-start my-5">
+  <% if flash[:message] %>
+    <div class="row">
+      <%= flash[:message] %>
+    </div>
+  <% end %>
   <div class="row">
     <div class="col-3 text-end">
       <h3 class="username_font">@<%= @user.username %></h3>
