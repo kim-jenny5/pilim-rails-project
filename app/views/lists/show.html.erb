@@ -1,80 +1,97 @@
-  <div class="container mt-5">
-    <div class="row">
-      <h1 class="black_page_title"><%= @list.title %></h1>
-    </div>
-    <div class="row list_details nopadding">
-      <%= @list.description %>
-    </div>
-    <div class="row list_details mt-3">
-      <div class="d-flex flex-row align-items-center">
-        <span id="list_creator">Creator:</span>
-        <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
-      </div>
-    </div>
-    <% if @list.user == current_user %>
-      <div class="row mt-2">
-        <div class="d-flex flex-row align-items-center">
-          <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
-          <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>
+  
+<div class="container mt-5">
+  <% if flash[:error] %>
+    <div class="container-fluid">
+      <div class="row mb-3">
+        <div class="col d-flex justify-content-center">
+          <div class="alert alert-danger d-flex align-items-center py-2 " role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <div>
+              <%= flash[:error] %>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row mt-4">
-        <%= form_tag list_path(@list), method: :get do %>
-          <div class="input-group">
-            <%= search_field_tag :search, nil, placeholder: "Search for a movie to add to list", id: "movie_list_search", class: "form-control" %>
-            <%= submit_tag "Search", name: nil, class: "btn movie_list_btn" %>
-          </div>
-        <% end %>
+    </div>
+  <% end %>
+  <div class="row">
+    <h1 class="black_page_title"><%= @list.title %></h1>
+  </div>
+  <div class="row list_details nopadding">
+    <%= @list.description %>
+  </div>
+  <div class="row list_details mt-3">
+    <div class="d-flex flex-row align-items-center">
+      <span id="list_creator">Creator:</span>
+      <%= link_to "@#{@list.user.username}", user_path(@list.user), class: "custom_link" %>
+    </div>
+  </div>
+  <% if @list.user == current_user %>
+    <div class="row mt-2">
+      <div class="d-flex flex-row align-items-center">
+        <%= link_to "Edit", edit_list_path(@list), {class: "btn list_edit_btn"} %>
+        <%= button_to "Delete", list_path(@list), method: :delete, class: "btn list_delete_btn" %>
       </div>
-      <% if params[:search] %>
-        <% @movies.each do |movie| %>
-          <div class="row mt-3">
-            <div class="d-flex flex-row align-items-center">
-              <%= movie.title %> (<%= movie.year %>)
-              <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id), class: "btn list_add_btn" %>
-            </div>
-          </div>
-        <% end %>
-        <div class="row mt-4">
-          <div class="container flash_msg_container">
-            <% if flash[:message] %>
-              <%= render "application/flash_messages" %>
-            <% else %>
-            </div>
-            <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
-          <% end %>
+    </div>
+    <div class="row mt-4">
+      <%= form_tag list_path(@list), method: :get do %>
+        <div class="input-group">
+          <%= search_field_tag :search, nil, placeholder: "Search for a movie to add to list", id: "movie_list_search", class: "form-control" %>
+          <%= submit_tag "Search", name: nil, class: "btn movie_list_btn" %>
         </div>
       <% end %>
-    <% end %>
-  </div>
-  <div class="container list_container my-5">
-    <% if @list.movies.exists? %>
-      <div class="table-responsive text-nowrap">
-        <table class="table table-hover table-borderless">
-          <thead>
-            <tr>
-              <th scope="col" class="table_header">TITLE</th>
-              <th scope="col" class="table_header">YEAR RELEASED</th>
-              <th scope="col" class="table_header">GENRE</th>
-              <% if @list.user == current_user %>
-                <th scope="col"></th>
-              <% end %>
-            </tr>
-          </thead>
-          <% @list.movies.each do |movie| %>
-            <tbody>
-              <tr>
-                <td class="align-middle"><%= link_to movie.title, movie_path(movie), class: "custom_link" %></td>
-                <td class="align-middle"><%= movie.year %></td>
-                <td class="align-middle"><%= movie.genre %></td>
-                <% if @list.user == current_user %>
-                  <td><%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete, class: "btn list_delete_btn" %></td>
-                <% end %>
-              </tr>
-            </tbody>
-          <% end %>
-        </table>
+    </div>
+    <% if params[:search] %>
+      <% @movies.each do |movie| %>
+        <div class="row mt-3">
+          <div class="d-flex flex-row align-items-center">
+            <%= movie.title %> (<%= movie.year %>)
+            <%= button_to "Add", list_movie_add_path(list_id: @list.id, movie_id: movie.id), class: "btn list_add_btn" %>
+          </div>
+        </div>
+      <% end %>
+      <div class="row mt-4">
+        <div class="container flash_msg_container">
+          <% if flash[:message] %>
+            <%= render "application/flash_messages" %>
+          <% else %>
+          </div>
+          <small>If you can't find the movie you're looking for, it's not in our database yet. <%= link_to "Click here to add it!", new_movie_path %></small><br>
+        <% end %>
       </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
+<div class="container list_container my-5">
+  <% if @list.movies.exists? %>
+    <div class="table-responsive text-nowrap">
+      <table class="table table-hover table-borderless">
+        <thead>
+          <tr>
+            <th scope="col" class="table_header">TITLE</th>
+            <th scope="col" class="table_header">YEAR RELEASED</th>
+            <th scope="col" class="table_header">GENRE</th>
+            <% if @list.user == current_user %>
+              <th scope="col"></th>
+            <% end %>
+          </tr>
+        </thead>
+        <% @list.movies.each do |movie| %>
+          <tbody>
+            <tr>
+              <td class="align-middle"><%= link_to movie.title, movie_path(movie), class: "custom_link" %></td>
+              <td class="align-middle"><%= movie.year %></td>
+              <td class="align-middle"><%= movie.genre %></td>
+              <% if @list.user == current_user %>
+                <td><%= button_to "Delete", list_movie_delete_path(list_id: @list.id, movie_id: movie.id), method: :delete, class: "btn list_delete_btn" %></td>
+              <% end %>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+</div>
 </div>

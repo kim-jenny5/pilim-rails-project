@@ -78,7 +78,7 @@ class ListsController < ApplicationController
 
     def not_authorized
         if @list.user != current_user
-            flash[:message] = "Sorry. You are not authorized to access this page."
+            flash[:error] = "Sorry. You are not authorized to access this page."
             redirect_to list_path(@list)
         end
     end

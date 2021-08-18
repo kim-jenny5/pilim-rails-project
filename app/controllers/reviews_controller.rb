@@ -57,7 +57,7 @@ class ReviewsController < ApplicationController
 
     def not_authorized
         if @review.user != current_user
-            flash[:message] = "Sorry. You are not authorized to access this page."
+            flash[:error] = "Sorry. You are not authorized to access this page."
             redirect_to user_path(current_user)
         end
     end
