@@ -19,16 +19,12 @@ class UsersController < ApplicationController
     end
 
     def show
-        # @user = User.friendly.find_by_username(params[:id])
     end 
 
     def edit
-        # @user = User.friendly.find_by_username(params[:id])
     end
 
     def update
-        # @user = User.friendly.find_by_username(params[:id])
-
         if @user.valid?
             if @user.update(user_params)
                 redirect_to user_path(@user)
